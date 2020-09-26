@@ -30,10 +30,10 @@ void printArray(int array[], int size)
 {
     cout << "[";
 
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < size-1; i++)
         cout << array[i] << ", ";
 
-    cout << "\b\b]\n";
+    cout << array[size-1] << "]\n";
 }
  
 
