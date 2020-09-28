@@ -25,10 +25,10 @@ def selection_sort(*args):
                 
         
         # swap
-        hold = array[i]
-        array[i] = array[min_value_index]
-        array[min_value_index] = hold
+        array[i], array[min_value_index] = array[min_value_index], array[i]
         
+       
+       
        
        
     # return sorted array 
