@@ -14,16 +14,12 @@ def bubble_sort(*args):
     
     
     
-    # hold values for swaping
-    hold = 0
     
     
     for i in range(0, len(array)):
         for j in range(i+1, len(array)):
             if array[i] > array[j]:
-                hold = array[i]
-                array[i] = array[j]
-                array[j] = hold
+                array[i], array[j] = array[j], array[i]
         
        
        
