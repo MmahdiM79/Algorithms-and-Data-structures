@@ -4,11 +4,11 @@
 
 
 
-void merge(int array[], int startIndex, int halfIndex, int lastIndex)
+void merge(int array[], int startIndex, int midIndex, int lastIndex)
 {
     // calculate the size of the sub arrays
-    int rightSubArraySize = halfIndex - startIndex + 1;
-    int leftSubArraySize = lastIndex - halfIndex;
+    int rightSubArraySize = midIndex - startIndex + 1;
+    int leftSubArraySize = lastIndex - midIndex;
 
 
 
@@ -21,7 +21,7 @@ void merge(int array[], int startIndex, int halfIndex, int lastIndex)
     // initialize second sub array
     int leftArray[leftSubArraySize + 1];
     for (int j = 0; j < leftSubArraySize; j++)
-        leftArray[j] = array[halfIndex + j];
+        leftArray[j] = array[midIndex + j];
 
 
     
