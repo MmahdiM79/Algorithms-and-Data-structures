@@ -7,28 +7,28 @@
 void merge(int array[], int startIndex, int halfIndex, int lastIndex)
 {
     // calculate the size of the sub arrays
-    int firstSubArraySize = halfIndex - startIndex + 1;
-    int secondSubArraySize = lastIndex - halfIndex;
+    int rightSubArraySize = halfIndex - startIndex + 1;
+    int leftSubArraySize = lastIndex - halfIndex;
 
 
 
     // initialize first sub array
-    int rightArray[firstSubArraySize + 1];
-    for (int i = 0; i < firstSubArraySize; i++)
+    int rightArray[rightSubArraySize + 1];
+    for (int i = 0; i < rightSubArraySize; i++)
         rightArray[i] = array[startIndex + i - 1];
 
 
     // initialize second sub array
-    int leftArray[secondSubArraySize + 1];
-    for (int j = 0; j < secondSubArraySize; j++)
+    int leftArray[leftSubArraySize + 1];
+    for (int j = 0; j < leftSubArraySize; j++)
         leftArray[j] = array[halfIndex + j];
 
 
     
 
     // set sentinels
-    rightArray[firstSubArraySize+1] = __INT_MAX__;
-    leftArray[secondSubArraySize+1] = __INT_MAX__;
+    rightArray[rightSubArraySize+1] = __INT_MAX__;
+    leftArray[leftSubArraySize+1] = __INT_MAX__;
 
 
 
