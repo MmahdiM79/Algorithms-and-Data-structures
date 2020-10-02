@@ -1,6 +1,11 @@
 // C program for implementation of Bubble sort 
+// by sumitisnot4u
 #include <stdio.h> 
   
+
+
+
+
 void swap(int *xp, int *yp) 
 { 
     int temp = *xp; 
@@ -8,6 +13,8 @@ void swap(int *xp, int *yp)
     *yp = temp; 
 } 
   
+
+
 // A function to implement bubble sort 
 void bubbleSort(int arr[], int n) 
 { 
@@ -20,6 +27,8 @@ void bubbleSort(int arr[], int n)
               swap(&arr[j], &arr[j+1]); 
 } 
   
+
+
 /* Function to print an array */
 void printArray(int arr[], int size) 
 { 
@@ -29,13 +38,34 @@ void printArray(int arr[], int size)
     printf("\n"); 
 } 
   
+
+
+
+
 // Driver program to test above functions 
-int main() 
-{ 
-    int arr[] = {64, 34, 25, 12, 22, 11, 90}; 
-    int n = sizeof(arr)/sizeof(arr[0]); 
-    bubbleSort(arr, n); 
-    printf("Sorted array: \n"); 
-    printArray(arr, n); 
-    return 0; 
-} 
+int main()
+  {
+      printf("\n\n ---------------- \n\n");
+      printf("a simple test:\n\n");
+ 
+ 
+      int array[] = {2, 12, 4, 0, -21, 23, -11, 43, 432, 130, 99, 33};
+ 
+      printf("before sort: ");
+      printArray(array, 12);
+ 
+ 
+ 
+      bubble_sort(array, 12);
+ 
+      printf("after sort: ");
+      printArray(array, 12);
+ 
+ 
+      printf("\n ---------------- \n\n\n");
+ 
+ 
+ 
+ 
+     return 0;
+ } 
