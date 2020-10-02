@@ -2,7 +2,8 @@
 A playground for learning algorithms and data structures and practice them
 
 
-### Languages 
+
+## Languages 
 click on programming language that you want to learn
 <p  align="center">
     <a href="https://github.com/MmahdiM79/Algorithms-and-Data-structures/search?utf8=%E2%9C%93&q=language%3APython&type="><img height="70" src="pngs/python.png" alt="python"/></a>
@@ -10,3 +11,7 @@ click on programming language that you want to learn
     <a href="https://github.com/MmahdiM79/Algorithms-and-Data-structures/search?utf8=%E2%9C%93&q=language%3AJava&type="><img height="70" src="pngs/java.png" alt="java"/></a>
     <a href="https://github.com/MmahdiM79/Algorithms-and-Data-structures/search?utf8=%E2%9C%93&q=language%3ACpp&type="><img height="70" src="pngs/cpp.png" alt="cpp"/></a>
 </p>
+
+
+### thanks to:
+* [sumitisnot4u](https://github.com/sumitisnot4u)
