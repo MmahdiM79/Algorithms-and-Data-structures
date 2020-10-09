@@ -4,6 +4,9 @@
 
 
 
+
+
+
 void binary_search(int array[], int startIndex, int endIndex, int target)
 {
     if (startIndex >= endIndex)
@@ -37,14 +40,19 @@ void binary_search(int array[], int startIndex, int endIndex, int target)
 
 
 
-/* Function to print an array */
-void printArray(int arr[], int size) 
-{ 
-    int i; 
-    for (i=0; i < size; i++) 
-        printf("%d ", arr[i]); 
-    printf("\n"); 
-} 
+
+// a simple function for printing arrays 
+void printArray(int array[], int size)
+{
+    printf("[");
+
+    for (int i = 0; i < size; i++)
+        printf("%d, ", array[i]);
+
+    printf("\b\b]\n");
+}
+ 
+
 
 
 
