@@ -6,6 +6,11 @@
 
 
 
+
+
+
+
+
 void swap(int *xp, int *yp) 
 { 
     int temp = *xp; 
@@ -13,6 +18,9 @@ void swap(int *xp, int *yp)
     *yp = temp; 
 } 
   
+
+
+
 
 
 // A function to implement bubble sort 
@@ -29,14 +37,24 @@ void bubbleSort(int arr[], int n)
   
 
 
-/* Function to print an array */
-void printArray(int arr[], int size) 
-{ 
-    int i; 
-    for (i=0; i < size; i++) 
-        printf("%d ", arr[i]); 
-    printf("\n"); 
-} 
+
+
+
+// a simple function for printing arrays 
+void printArray(int array[], int size)
+{
+    printf("[");
+
+    for (int i = 0; i < size; i++)
+        printf("%d, ", array[i]);
+
+    printf("\b\b]\n");
+}
+
+
+
+
+
   
 
 
