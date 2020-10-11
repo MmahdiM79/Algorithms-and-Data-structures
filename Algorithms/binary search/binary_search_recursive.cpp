@@ -22,7 +22,7 @@ void binary_search(int array[], int startIndex, int endIndex, int target)
 
 
 
-    int midIndex = (startIndex - endIndex + 1)/2;
+    int midIndex = (startIndex + endIndex)/2;
 
     if (array[midIndex] == target)
     {
@@ -31,7 +31,7 @@ void binary_search(int array[], int startIndex, int endIndex, int target)
     }
 
     if (target > array[midIndex])
-        binary_search(array, midIndex, endIndex, target);
+        binary_search(array, midIndex+1, endIndex, target);
     else 
         binary_search(array, startIndex, midIndex, target);
 }
