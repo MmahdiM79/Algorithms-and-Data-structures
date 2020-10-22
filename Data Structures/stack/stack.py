@@ -1,6 +1,6 @@
 
 
-class stack(object):
+class Stack(object):
 
    
     def __init__(self, n: int):
@@ -64,7 +64,7 @@ if __name__ == "__main__":
     
     
     # initialize a new stack
-    s = stack(1000)
+    s = Stack(1000)
     
     # add some values
     s.push(1)
