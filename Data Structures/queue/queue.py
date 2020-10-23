@@ -16,6 +16,10 @@ class Queue(object):
     
     def enqueue(self, value: int):
         
+        if self.is_full():
+            raise Exception(f"the object <Queue@{id(self)}> is full")
+        
+        
         self.__arr__[self.__tail__] = value
         
         self.__tail__ += 1
@@ -27,7 +31,8 @@ class Queue(object):
     def dequeue(self) -> int:
         
         if self.is_empty():
-            raise Exception("Queue is empty")
+            raise Exception(f"the object <Queue@{id(self)}> is empty")
+        
         
         output = self.__arr__[self.__head__]
         
