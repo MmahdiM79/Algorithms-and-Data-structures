@@ -66,6 +66,11 @@ class Queue(object):
     
     def is_empty(self) -> bool:
         return (self.__size__ == 0)
+    
+    
+    
+    def is_full(self) -> bool:
+        return (self.__size__ == self.__capacity__)
         
         
         
