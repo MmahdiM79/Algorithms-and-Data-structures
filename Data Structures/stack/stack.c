@@ -17,11 +17,10 @@
 
 typedef struct __STACK__
 {
-    int arr[1000];
+    int *arr;
     int top;
 }stack;
 
-#define newStackMalloc() (stack *) malloc(sizeof(stack))
 #define forEach(s, expression) for (int i = 0; i <= s.top; i++) {expression}
 
 
@@ -30,6 +29,19 @@ typedef struct __STACK__
 
 
 /*      functions       */
+
+
+stack *newStack(int capacity)
+{
+    stack *output = (stack *)malloc(sizeof(stack));
+
+    output->arr = (int *)malloc(capacity * sizeof(int));
+    output->top = -1;
+
+
+    return output;
+}
+
 
 bool isStackEmpty(stack s)
 {
@@ -72,8 +84,8 @@ int main()
 
     
     // initialize a new stack
-    stack *s = newStackMalloc();
-    s->top = -1;
+    stack *s = newStack(100);
+    
 
     // add some values
     push(s, 1);
