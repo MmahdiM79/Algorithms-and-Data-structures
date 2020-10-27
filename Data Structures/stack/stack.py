@@ -3,23 +3,27 @@
 class Stack(object):
 
    
-    def __init__(self, n: int):
-        self.__size__ = n 
-        self.__arr__ = [0 for _ in range(n)]
+    def __init__(self, capacity: int):
+        self.__arr__ = [0 for _ in range(capacity)]
+        self.__capacity__ = capacity
         self.__top__ = -1
+        self.__size__ = 0
+        
         
         
     def is_empty(self) -> bool:
         return (self.__top__ == -1)
     
     
+    
     def push(self, value: int) -> bool:
         
-        if self.__top__ == self.__size__-1:
-            return False
+        if self.__top__ == self.__capacity__:
+            raise Exception("stack overflow")
         
         self.__top__ += 1
         self.__arr__[self.__top__] = value
+        self.__size__ += 1
         return True
     
     
@@ -29,8 +33,8 @@ class Stack(object):
             raise Exception("underflow")
         
         
-        self.__size__ -= 1
         self.__top__ -= 1
+        self.__size__ -= 1
         
         return self.__arr__[self.__top__+1]
         
