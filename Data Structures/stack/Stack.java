@@ -92,9 +92,9 @@ public class Stack
     {
         String output = "[";
 
-        for (int i: arr)
-            output += i + ", ";
-        
+        for (int i = 0; i <= top; i++)
+            output += arr[i] + ", ";
+
         return output + "\b\b]";
     }
 
