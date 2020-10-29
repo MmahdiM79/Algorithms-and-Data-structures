@@ -65,7 +65,7 @@ class Queue(object):
     
     
     def empty_space(self) -> int:
-        return self.size() - self.__len__()
+        return self.__capacity__ - self.__size__
     
     
     
