@@ -2,7 +2,12 @@
 
 
 
-
+/**
+ * This class represent a simple Queue 
+ * 
+ * @author Mohammad Mahdi Malmasi
+ * @version 0.1.0
+ */
 public class Queue
 {
             /*  Fields  */
