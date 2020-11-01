@@ -4,7 +4,7 @@ class Stack(object):
 
    
     def __init__(self, capacity: int):
-        self.__arr__ = [0 for _ in range(capacity)]
+        self.__arr__ = [None for _ in range(capacity)]
         self.__capacity__ = capacity
         self.__top__ = -1
         self.__size__ = 0
