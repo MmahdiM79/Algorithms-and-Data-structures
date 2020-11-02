@@ -21,7 +21,7 @@ typedef struct __STACK__
     int top;
 }stack;
 
-#define forEach(s, expression) for (int i = 0; i <= s.top; i++) {expression}
+#define forEach(s)  for(int i = 0; i <= s.top; i++)
 
 
 
@@ -67,7 +67,8 @@ int pop(stack *s)
 void printStack(stack s)
 {
     printf("stack:  ");
-    forEach(s, printf("%d, ", s.arr[i]););
+    forEach(s)
+        printf("%d, ", s.arr[i]);
     printf("\b\b\b\n");
 }
 
