@@ -86,7 +86,7 @@ public class Queue
 
         head++;
         head %= arr.length;
-        size++;
+        size--;
 
         return output;
     }
