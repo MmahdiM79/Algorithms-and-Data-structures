@@ -35,6 +35,7 @@ class Queue(object):
         
         
         output = self.__arr__[self.__head__]
+        self.__arr__[self.__head__] = None
         
         self.__head__ += 1
         self.__head__ %= self.__capacity__
