@@ -37,8 +37,15 @@ class Stack(object):
         self.__size__ -= 1
         
         return self.__arr__[self.__top__+1]
+    
+    
+    def peek(self) -> int:
         
+        if self.is_empty():
+            raise Exception("underflow")
         
+        return self.__arr__[self.__top__]
+    
         
     def values(self) -> list:
         return self.__arr__[:self.__top__+1]
