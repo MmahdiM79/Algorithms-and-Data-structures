@@ -76,6 +76,24 @@ public class Stack
 
 
     /**
+     * @return the last value of stack
+     * 
+     * @throws Exception if stack is underflow
+     */
+    public int peek() throws Exception
+    {
+        try
+        {
+            return arr[top];
+        }
+        catch (IndexOutOfBoundsException e)
+        {
+            throw new Exception("stack underflow !");
+        }
+    }
+
+
+    /**
      * @return {@code true} if stack is empty. otherwise returns {@code false}
      */
     public boolean isEmpty()
