@@ -64,6 +64,15 @@ int pop(stack *s)
 }
 
 
+int peek(stack *s)
+{
+    if (isStackEmpty(*s))
+        error(underflow);
+
+    return s->arr[(s->top)];
+}
+
+
 void printStack(stack s)
 {
     printf("stack:  ");
