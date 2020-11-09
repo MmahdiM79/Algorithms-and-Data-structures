@@ -95,6 +95,36 @@ void tree_insert(BST *tree, NODE *node)
 }
 
 
+
+NODE *tree_search_recursive(BST *tree, int value)
+{
+    NODE *current = tree->root;
+    NODE *output = NULL;
+
+
+    if (current == NULL || current->value == value)
+        return current;
+
+    if (value < current->value)
+    {
+        tree->root = current->left;
+        output = tree_search_recursive(tree, value);
+        tree->root = current;
+
+        return output;
+    }
+    else 
+    {
+        tree->root = current->right;
+        output = tree_search_recursive(tree, value);
+        tree->root = current;
+
+        return output;
+    }
+}
+
+
+
 void inorder_tree_walk(BST *tree)
 {
     if (tree->root != NULL)
