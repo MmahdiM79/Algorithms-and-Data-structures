@@ -97,10 +97,11 @@ void tree_insert(BST *tree, NODE *node)
 
 void inorder_tree_walk(BST *tree)
 {
-    NODE *current = tree->root;
-
-    if (current != NULL)
+    if (tree->root != NULL)
     {
+        NODE *current = tree->root;
+
+
         tree->root = current->left;
         inorder_tree_walk(tree);
 
@@ -108,13 +109,35 @@ void inorder_tree_walk(BST *tree)
 
         tree->root = current->right;
         inorder_tree_walk(tree);
+
+
+        tree->root = current;
     }
-
-    tree->root = current;
-
-
-    return;
 }
+
+
+void preorder_tree_walk(BST *tree)
+{
+    if (tree->root != NULL)
+    {
+        NODE *current = tree->root;
+
+
+        printf("%d ", current->value);
+
+        tree->root = current->left;
+        inorder_tree_walk(tree);
+
+        tree->root = current->right;
+        inorder_tree_walk(tree);
+
+
+        tree->root = current;
+    }
+}
+
+
+
 
 
 
