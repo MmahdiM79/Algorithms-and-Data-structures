@@ -7,6 +7,9 @@
 
 
 
+
+        /*          Structs         */
+
 typedef struct __NODE__
 {
     int value;
@@ -28,8 +31,6 @@ node *new_node(int value)
 
     return output;
 }
-
-
 
 
 
@@ -57,6 +58,35 @@ BST *new_bst()
 
 
 
+
+
+
+
+
+
+            /*          functions           */
+
+
+void inorder_tree_walk(Bst tree)
+{
+    Node current = tree->root;
+
+    if (current != NULL)
+    {
+        tree->root = current->left;
+        inorder_tree_walk(tree);
+
+        printf("%d ", current->value);
+
+        tree->root = current->right;
+        inorder_tree_walk(tree);
+    }
+
+    tree->root = current;
+
+
+    return;
+}
 
 
 
