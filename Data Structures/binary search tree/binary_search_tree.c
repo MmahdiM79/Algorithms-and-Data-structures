@@ -18,13 +18,11 @@ typedef struct __NODE__
     struct __NODE__ *right;
     struct __NODE__ *left;
 
-} node;
+} NODE;
 
-#define Node node *
-
-node *new_node(int value)
+NODE *new_node(int value)
 {
-    node *output = (node *)malloc(sizeof(node));
+    NODE *output = (NODE *)malloc(sizeof(NODE));
 
     output->value = value;
     output->p = output->right = output->left = NULL;
@@ -37,12 +35,10 @@ node *new_node(int value)
 
 typedef struct __BINARY_SEARCH_TREE__
 {
-    node *root;
+    NODE *root;
     int size;
 
 } BST;
-
-#define Bst BST *
 
 BST *new_bst()
 {
@@ -67,9 +63,41 @@ BST *new_bst()
             /*          functions           */
 
 
-void inorder_tree_walk(Bst tree)
+void tree_insert(BST *tree, NODE *node)
 {
-    Node current = tree->root;
+    NODE *current = tree->root;
+    NODE *hold = NULL;
+
+    while (current != NULL)
+    {
+        hold = current;
+
+        if (node->value < current->value)
+            current = current->left;
+        else 
+            current = current->right;
+    }
+
+    node->p = hold;
+
+    if (hold == NULL)
+        tree->root = node;
+    
+    else if (node->value < hold->value)
+        hold->left = node;
+
+    else 
+        hold->right = node;
+
+
+
+    tree->size++;
+}
+
+
+void inorder_tree_walk(BST *tree)
+{
+    NODE *current = tree->root;
 
     if (current != NULL)
     {
