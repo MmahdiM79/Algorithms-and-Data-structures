@@ -137,6 +137,27 @@ void preorder_tree_walk(BST *tree)
 }
 
 
+void postorder_tree_walk(BST *tree)
+{
+    if (tree->root != NULL)
+    {
+        NODE *current = tree->root;
+
+
+        tree->root = current->left;
+        inorder_tree_walk(tree);
+
+        tree->root = current->right;
+        inorder_tree_walk(tree);
+
+        printf("%d ", current->value);
+
+
+        tree->root = current;
+    }
+}
+
+
 
 
 
