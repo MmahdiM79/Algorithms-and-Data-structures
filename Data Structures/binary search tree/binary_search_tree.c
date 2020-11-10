@@ -145,6 +145,25 @@ NODE *tree_search(BST *tree, int value)
 }
 
 
+int tree_minimum(BST *tree)
+{
+    if (tree->root == NULL)
+        return NULL;
+
+    
+    NODE *current = tree->root;
+    
+    while (current->left != NULL)
+        current = current->left;
+
+    
+    return current->value;
+}
+
+
+
+
+
 
 
 void inorder_tree_walk(BST *tree)
