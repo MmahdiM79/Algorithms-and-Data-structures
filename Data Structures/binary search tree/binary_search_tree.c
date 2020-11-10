@@ -161,7 +161,20 @@ int tree_minimum(BST *tree)
 }
 
 
+int tree_maximum(BST *tree)
+{
+    if (tree->root == NULL)
+        return NULL;
 
+    
+    NODE *current = tree->root;
+    
+    while (current->right != NULL)
+        current = current->right;
+
+    
+    return current->value;
+}
 
 
 
