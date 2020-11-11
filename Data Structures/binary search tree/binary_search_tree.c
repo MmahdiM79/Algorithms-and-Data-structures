@@ -177,6 +177,28 @@ int tree_maximum(BST *tree)
 }
 
 
+NODE *tree_successor(BST *tree)
+{
+    if (tree->root == NULL)
+        return NULL;
+    
+
+    NODE *current = tree->root;
+
+    if (current->right != NULL)
+        return tree_minimum(tree);
+    
+    NODE *hold = current->p;
+    while (hold != NULL && current == hold->right)
+    {
+        current = hold;
+        hold = hold->p;
+    }
+
+    return hold;
+}
+
+
 
 
 void inorder_tree_walk(BST *tree)
