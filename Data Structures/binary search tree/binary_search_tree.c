@@ -199,6 +199,27 @@ NODE *tree_successor(BST *tree)
 }
 
 
+NODE *tree_predecessor(BST *tree)
+{
+    if (tree->root == NULL)
+        return NULL;
+    
+
+    NODE *current = tree->root;
+
+    if (current->left != NULL)
+        return tree_minimum(tree);
+    
+    NODE *hold = current->p;
+    while (hold != NULL && current == hold->left)
+    {
+        current = hold;
+        hold = hold->p;
+    }
+
+    return hold;
+}
+
 
 
 void inorder_tree_walk(BST *tree)
