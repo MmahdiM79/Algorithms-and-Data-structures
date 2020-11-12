@@ -95,6 +95,22 @@ void tree_insert(BST *tree, NODE *node)
 }
 
 
+void transplant(BST *tree, NODE *node1, NODE *node2)
+{
+    if (node1->p == NULL)
+        tree->root = node2;
+
+    else if (node1 == node1->p->left)
+        node1->p->left = node2;
+
+    else
+        node1->p->right = node2;
+
+    if (node2 != NULL)
+        node2->p = node1->p;
+}
+
+
 
 
 NODE *tree_search_recursive(BST *tree, int value)
