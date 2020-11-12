@@ -63,82 +63,6 @@ BST *new_bst()
             /*          functions           */
 
 
-void tree_insert(BST *tree, NODE *node)
-{
-    NODE *current = tree->root;
-    NODE *hold = NULL;
-
-    while (current != NULL)
-    {
-        hold = current;
-
-        if (node->value < current->value)
-            current = current->left;
-        else 
-            current = current->right;
-    }
-
-    node->p = hold;
-
-    if (hold == NULL)
-        tree->root = node;
-    
-    else if (node->value < hold->value)
-        hold->left = node;
-
-    else 
-        hold->right = node;
-
-
-
-    tree->size++;
-}
-
-
-void transplant(BST *tree, NODE *node1, NODE *node2)
-{
-    if (node1->p == NULL)
-        tree->root = node2;
-
-    else if (node1 == node1->p->left)
-        node1->p->left = node2;
-
-    else
-        node1->p->right = node2;
-
-    if (node2 != NULL)
-        node2->p = node1->p;
-}
-
-
-void tree_delete(BST *tree, NODE *node_to_delete)
-{
-    if (node_to_delete->left == NULL)
-        transplant(tree, node_to_delete, node_to_delete->left);
-
-    else if (node_to_delete->right == NULL)
-        transplant(tree, node_to_delete, node_to_delete->right);
-
-    else 
-    {
-        NODE *hold = tree_minimum(tree);
-
-        if (hold->p != node_to_delete)
-        {
-            transplant(tree, hold, hold->right);
-            hold->right = node_to_delete->right;
-            hold->right->p = hold;
-        }
-
-        transplant(tree, node_to_delete, hold);
-        hold->left = node_to_delete->left;
-        hold->left->p = hold;
-    }
-}
-
-
-
-
 NODE *tree_search_recursive(BST *tree, int value)
 {
     NODE *current = tree->root;
@@ -324,6 +248,84 @@ void postorder_tree_walk(BST *tree)
 
         tree->root = current;
     }
+}
+
+
+
+void tree_insert(BST *tree, NODE *node)
+{
+    NODE *current = tree->root;
+    NODE *hold = NULL;
+
+    while (current != NULL)
+    {
+        hold = current;
+
+        if (node->value < current->value)
+            current = current->left;
+        else 
+            current = current->right;
+    }
+
+    node->p = hold;
+
+    if (hold == NULL)
+        tree->root = node;
+    
+    else if (node->value < hold->value)
+        hold->left = node;
+
+    else 
+        hold->right = node;
+
+
+
+    tree->size++;
+}
+
+
+void transplant(BST *tree, NODE *node1, NODE *node2)
+{
+    if (node1->p == NULL)
+        tree->root = node2;
+
+    else if (node1 == node1->p->left)
+        node1->p->left = node2;
+
+    else
+        node1->p->right = node2;
+
+    if (node2 != NULL)
+        node2->p = node1->p;
+}
+
+
+void tree_delete(BST *tree, NODE *node_to_delete)
+{
+    if (node_to_delete->left == NULL)
+        transplant(tree, node_to_delete, node_to_delete->left);
+
+    else if (node_to_delete->right == NULL)
+        transplant(tree, node_to_delete, node_to_delete->right);
+
+    else 
+    {
+        NODE *hold = tree_minimum(tree);
+
+        if (hold->p != node_to_delete)
+        {
+            transplant(tree, hold, hold->right);
+            hold->right = node_to_delete->right;
+            hold->right->p = hold;
+        }
+
+        transplant(tree, node_to_delete, hold);
+        hold->left = node_to_delete->left;
+        hold->left->p = hold;
+    }
+
+
+    tree->size--;
 }
 
 
