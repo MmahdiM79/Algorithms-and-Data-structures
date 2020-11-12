@@ -111,6 +111,32 @@ void transplant(BST *tree, NODE *node1, NODE *node2)
 }
 
 
+void tree_delete(BST *tree, NODE *node_to_delete)
+{
+    if (node_to_delete->left == NULL)
+        transplant(tree, node_to_delete, node_to_delete->left);
+
+    else if (node_to_delete->right == NULL)
+        transplant(tree, node_to_delete, node_to_delete->right);
+
+    else 
+    {
+        NODE *hold = tree_minimum(tree);
+
+        if (hold->p != node_to_delete)
+        {
+            transplant(tree, hold, hold->right);
+            hold->right = node_to_delete->right;
+            hold->right->p = hold;
+        }
+
+        transplant(tree, node_to_delete, hold);
+        hold->left = node_to_delete->left;
+        hold->left->p = hold;
+    }
+}
+
+
 
 
 NODE *tree_search_recursive(BST *tree, int value)
