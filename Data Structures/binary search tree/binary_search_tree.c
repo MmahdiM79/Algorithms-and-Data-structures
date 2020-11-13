@@ -111,7 +111,7 @@ NODE *tree_search(BST *tree, int value)
 }
 
 
-int tree_minimum(BST *tree)
+NODE *tree_minimum_node(BST *tree)
 {
     if (tree->root == NULL)
         return NULL;
@@ -123,11 +123,11 @@ int tree_minimum(BST *tree)
         current = current->left;
 
     
-    return current->value;
+    return current;
 }
 
 
-int tree_maximum(BST *tree)
+NODE *tree_maximum_node(BST *tree)
 {
     if (tree->root == NULL)
         return NULL;
@@ -139,7 +139,7 @@ int tree_maximum(BST *tree)
         current = current->right;
 
     
-    return current->value;
+    return current;
 }
 
 
