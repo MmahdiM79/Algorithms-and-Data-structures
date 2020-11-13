@@ -69,6 +69,21 @@ class BinarySearchTree(object):
         if node2.p is not None:
             node2.p = node1.p
             
+    
+    
+    def minimum_node(self) -> Node:
+        
+        if self.__root__ is None:
+            raise Exception("tree is empty")
+        
+        
+        current = self.__root__
+        
+        while current.left is not None:
+            current = current.left
+            
+        return current
+    
         
     
     
