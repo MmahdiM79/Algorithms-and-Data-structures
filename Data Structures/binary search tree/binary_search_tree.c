@@ -219,10 +219,10 @@ void preorder_tree_walk(BST *tree)
         printf("%d ", current->value);
 
         tree->root = current->left;
-        inorder_tree_walk(tree);
+        preorder_tree_walk(tree);
 
         tree->root = current->right;
-        inorder_tree_walk(tree);
+        preorder_tree_walk(tree);
 
 
         tree->root = current;
@@ -238,10 +238,10 @@ void postorder_tree_walk(BST *tree)
 
 
         tree->root = current->left;
-        inorder_tree_walk(tree);
+        postorder_tree_walk(tree);
 
         tree->root = current->right;
-        inorder_tree_walk(tree);
+        postorder_tree_walk(tree);
 
         printf("%d ", current->value);
 
