@@ -152,7 +152,7 @@ NODE *tree_successor(BST *tree)
     NODE *current = tree->root;
 
     if (current->right != NULL)
-        return tree_minimum(tree);
+        return tree_minimum_node(tree);
     
     NODE *hold = current->p;
     while (hold != NULL && current == hold->right)
@@ -174,7 +174,7 @@ NODE *tree_predecessor(BST *tree)
     NODE *current = tree->root;
 
     if (current->left != NULL)
-        return tree_minimum(tree);
+        return tree_minimum_node(tree);
     
     NODE *hold = current->p;
     while (hold != NULL && current == hold->left)
@@ -310,7 +310,7 @@ void tree_delete(BST *tree, NODE *node_to_delete)
 
     else 
     {
-        NODE *hold = tree_minimum(tree);
+        NODE *hold = tree_minimum_node(tree);
 
         if (hold->p != node_to_delete)
         {
