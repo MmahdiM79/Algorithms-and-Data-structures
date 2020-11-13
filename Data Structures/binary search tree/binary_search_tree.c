@@ -344,5 +344,65 @@ void tree_delete(BST *tree, NODE *node_to_delete)
 
 int main()
 {
+
+
+    printf("\n\n ---------------- \n\n");
+    printf("a simple test:\n\n");
+
+
+    // create a new binary tree
+    BST *t = new_bst();
+
+    // add some nodes
+    tree_insert(t, new_node(2));
+    tree_insert(t, new_node(4));
+    tree_insert(t, new_node(1));
+    tree_insert(t, new_node(5));
+    tree_insert(t, new_node(8));
+    tree_insert(t, new_node(6));
+    tree_insert(t, new_node(9));
+    tree_insert(t, new_node(0));
+    tree_insert(t, new_node(10));
+    tree_insert(t, new_node(3));
+    tree_insert(t, new_node(11));
+    tree_insert(t, new_node(7));
+
+
+    // tree walks
+    printf("tree walks:\n");
+    printf("\tpreorder walk :  "); preorder_tree_walk(t); printf("\n");
+    printf("\tinorder walk  :  "); inorder_tree_walk(t); printf("\n");
+    printf("\tpostorder walk:  "); postorder_tree_walk(t); printf("\n");
+
+
+    // add a new node
+    printf("\ninorder walk after add a new node with value 12:  "); 
+    NODE *node = new_node(12);
+    tree_insert(t, node);
+    inorder_tree_walk(t);
+    printf("\n");
+
+
+    // remove a node
+    printf("\ninorder walk after remove the node with value 12:  "); 
+    tree_delete(t, node);
+    inorder_tree_walk(t);
+    printf("\n");
+
+
+    // find minimum
+    printf("\nminimum value in this tree:  %d\n", tree_minimum_node(t)->value);
+     // find maximum
+    printf("\nmaximum value in this tree:  %d\n", tree_maximum_node(t)->value);
+
+
+
+
+
+
+    printf("\n\n ---------------- \n\n\n");
+
+
+
     return 0;
 }
