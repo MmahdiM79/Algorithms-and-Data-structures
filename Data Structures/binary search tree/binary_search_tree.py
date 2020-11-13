@@ -84,6 +84,20 @@ class BinarySearchTree(object):
             
         return current
     
+    
+    
+    def maximum_node(self) -> Node:
+        
+        if self.__root__ is None:
+            raise Exception("tree is empty")
+        
+        
+        current = self.__root__
+        
+        while current.right is not None:
+            current = current.right
+            
+        return current
         
     
     
