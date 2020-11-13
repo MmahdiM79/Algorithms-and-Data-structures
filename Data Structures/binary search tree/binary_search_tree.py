@@ -22,7 +22,7 @@ class BinarySearchTree(object):
         
     
     
-    def insert(self, value: int) -> None:
+    def insert(self, value: int) -> Node:
         
         new_node = self.Node(value)
         current = self.__root__
@@ -50,6 +50,7 @@ class BinarySearchTree(object):
             
             
         self.__size__ += 1
+        return new_node
         
         
         
