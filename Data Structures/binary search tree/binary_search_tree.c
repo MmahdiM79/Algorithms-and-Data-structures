@@ -73,21 +73,14 @@ NODE *tree_search_recursive(BST *tree, int value)
         return current;
 
     if (value < current->value)
-    {
         tree->root = current->left;
-        output = tree_search_recursive(tree, value);
-        tree->root = current;
-
-        return output;
-    }
     else 
-    {
         tree->root = current->right;
-        output = tree_search_recursive(tree, value);
-        tree->root = current;
+        
 
-        return output;
-    }
+    output = tree_search_recursive(tree, value);
+    tree->root = current;
+    return output;
 }
 
 
