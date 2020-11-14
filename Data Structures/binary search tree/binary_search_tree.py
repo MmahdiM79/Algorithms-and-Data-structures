@@ -283,6 +283,7 @@ if __name__ == "__main__":
     print("a simple test:\n\n\n")
     
     
+    
     # create a new binary tree
     t = BinarySearchTree()
     
@@ -329,8 +330,12 @@ if __name__ == "__main__":
     
     
     
-    
-    
     print("\n\n ---------------- \n\n")
+
+
+
+
+
+
 
 
