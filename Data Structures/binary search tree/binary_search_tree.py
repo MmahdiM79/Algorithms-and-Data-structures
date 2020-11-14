@@ -123,6 +123,26 @@ class BinarySearchTree(object):
             current = current.right
             
         return current
+    
+    
+    
+    def search(self, value: int) -> Node:
+        
+        current = self.__root__
+        
+        
+        while current is not None:
+            
+            if current.value == value:
+                return current
+            
+            if value < current.value:
+                current = current.left
+            else:
+                current = current.right
+                
+                
+        return None
         
     
     
