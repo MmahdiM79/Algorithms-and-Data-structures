@@ -296,10 +296,10 @@ void transplant(BST *tree, NODE *node1, NODE *node2)
 void tree_delete(BST *tree, NODE *node_to_delete)
 {
     if (node_to_delete->left == NULL)
-        transplant(tree, node_to_delete, node_to_delete->left);
+        transplant(tree, node_to_delete, node_to_delete->right);
 
     else if (node_to_delete->right == NULL)
-        transplant(tree, node_to_delete, node_to_delete->right);
+        transplant(tree, node_to_delete, node_to_delete->left);
 
     else 
     {
