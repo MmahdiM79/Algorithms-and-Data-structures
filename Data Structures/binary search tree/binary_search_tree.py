@@ -206,7 +206,26 @@ class BinarySearchTree(object):
             
         
         return hold 
+    
+    
+    
+    def walk_inorder(self) -> None:
         
+        if self.__root__ is not None:
+            current = self.__root__
+            
+            self.__root__ = current.left
+            self.walk_inorder()
+            
+            print(f"{current.value} ", end='', sep='')
+            
+            self.__root__ = current.right
+            self.walk_inorder()
+            
+            
+            self.__root__ = current
+            
+            
             
         
     
