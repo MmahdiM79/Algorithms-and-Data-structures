@@ -51,6 +51,31 @@ class BinarySearchTree(object):
             
         self.__size__ += 1
         return new_node
+    
+    
+    
+    def delete(self, node: Node) -> None:
+        
+        if node.left is None:
+            self.__transplant__(node, node.left)
+            
+        elif node.right is None:
+            self.__transplant__(node, node.right)
+            
+        else:
+            hold = self.minimum_node()
+            
+            if hold.p is not node:
+                self.__transplant__(hold, hold.right)
+                hold.right = node.right
+                hold.right.p = hold
+                
+            self.__transplant__(node, hold)
+            hold.left = node.left
+            hold.left.p = hold
+            
+            
+        self.__size__ -= 1
         
         
         
