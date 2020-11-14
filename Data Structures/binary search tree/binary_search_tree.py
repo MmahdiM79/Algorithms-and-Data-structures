@@ -143,6 +143,28 @@ class BinarySearchTree(object):
                 
                 
         return None
+    
+    
+    
+    def search_recursive(self, value: int) -> Node:
+        
+        current = self.__root__
+        output  = None
+        
+        if current is None or current.value == value:
+            return current
+        
+        
+        if value < current.value:
+            self.__root__ = current.left
+        else:
+            self.__root__ = current.right
+
+        
+        output = self.search_recursive(value)
+        self.__root__ = current
+        return output
+            
         
     
     
