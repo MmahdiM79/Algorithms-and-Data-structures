@@ -303,7 +303,10 @@ void tree_delete(BST *tree, NODE *node_to_delete)
 
     else 
     {
+        NODE *root = tree->root;
+        tree->root = node_to_delete->right;
         NODE *hold = tree_minimum_node(tree);
+        tree->root = root;
 
         if (hold->p != node_to_delete)
         {
