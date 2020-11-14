@@ -63,7 +63,10 @@ class BinarySearchTree(object):
             self.__transplant__(node, node.left)
             
         else:
+            root = self.__root__
+            self.__root__ = node.right
             hold = self.minimum_node()
+            self.__root__ = root
             
             if hold.p is not node:
                 self.__transplant__(hold, hold.right)
