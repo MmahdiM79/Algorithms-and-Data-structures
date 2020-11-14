@@ -164,6 +164,28 @@ class BinarySearchTree(object):
         output = self.search_recursive(value)
         self.__root__ = current
         return output
+    
+    
+    
+    def successor(self) -> Node:
+        
+        if self.__root__ is None:
+            return None
+        
+        
+        current = self.__root__
+        if current.right is not None:
+            return self.minimum_node()
+        
+        
+        hold = current.p
+        while hold is not None and current is hold.right:
+            current = hold
+            hold = hold.p
+            
+        
+        return hold 
+        
             
         
     
