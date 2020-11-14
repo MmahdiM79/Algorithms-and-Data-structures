@@ -57,10 +57,10 @@ class BinarySearchTree(object):
     def delete(self, node: Node) -> None:
         
         if node.left is None:
-            self.__transplant__(node, node.left)
+            self.__transplant__(node, node.right)
             
         elif node.right is None:
-            self.__transplant__(node, node.right)
+            self.__transplant__(node, node.left)
             
         else:
             hold = self.minimum_node()
@@ -275,6 +275,59 @@ class BinarySearchTree(object):
     
     
 if __name__ == "__main__":
-    pass
+    
+    print("\n\n ---------------- \n")
+    print("a simple test:\n\n\n")
+    
+    
+    # create a new binary tree
+    t = BinarySearchTree()
+    
+    # add some nodes
+    t.insert(2)
+    t.insert(4)
+    t.insert(1)
+    t.insert(5)
+    t.insert(8)
+    t.insert(6)
+    t.insert(9)
+    t.insert(0)
+    t.insert(10)
+    t.insert(3)
+    t.insert(11)
+    t.insert(7)
+    
+
+    # tree walks
+    print("tree walks:")
+    print("\tpreorder walk :  ", end=''); t.walk_preorder(); print()
+    print("\tinorder walk  :  ", end=''); t.walk_inorder(); print()
+    print("\tpostorder walk:  ", end=''); t.walk_postorder(); print()
+     
+    
+    # add a new node
+    print("\ninorder walk after add a new node with value 12:  ", end='')
+    node = t.insert(12)
+    t.walk_inorder()
+    print()
+    
+    
+    # remove a node
+    print("\ninorder walk after remove the node with value 12:  ", end='')
+    t.delete(node)
+    t.walk_inorder()
+    print()
+    
+    
+    # find minimum
+    print(f"\nminimum value in this tree:  {t.minimum_node().value}")
+    # find maximum
+    print(f"\nmaximum value in this tree:  {t.maximum_node().value}")
+    
+    
+    
+    
+    
+    print("\n\n ---------------- \n\n")
 
 
