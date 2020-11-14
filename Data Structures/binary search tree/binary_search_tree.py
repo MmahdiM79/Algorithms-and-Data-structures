@@ -94,7 +94,7 @@ class BinarySearchTree(object):
             node1.p.right = node2
             
         
-        if node2.p is not None:
+        if node2 is not None:
             node2.p = node1.p
             
     
