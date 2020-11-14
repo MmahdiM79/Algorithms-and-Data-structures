@@ -227,6 +227,24 @@ class BinarySearchTree(object):
             
             
             
+    def walk_preorder(self) -> None:
+        
+        if self.__root__ is not None:
+            current = self.__root__
+            
+            print(f"{current.value} ", end='', sep='')
+            
+            self.__root__ = current.left
+            self.walk_preorder()
+            
+            self.__root__ = current.right
+            self.walk_preorder()
+            
+            
+            self.__root__ = current
+            
+            
+            
         
     
     
