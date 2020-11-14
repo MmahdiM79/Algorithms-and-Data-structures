@@ -185,6 +185,27 @@ class BinarySearchTree(object):
             
         
         return hold 
+    
+    
+    
+    def predecessor(self) -> Node:
+        
+        if self.__root__ is None:
+            return None
+        
+        
+        current = self.__root__
+        if current.left is not None:
+            return self.minimum_node()
+        
+        
+        hold = current.p
+        while hold is not None and current is hold.left:
+            current = hold
+            hold = hold.p
+            
+        
+        return hold 
         
             
         
