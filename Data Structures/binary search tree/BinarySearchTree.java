@@ -86,6 +86,26 @@ public class BinarySearchTree
     }
 
 
+    /**
+     * @return the node that have the minimum value in this tree
+     * @throws Exception if tree is empty
+     */
+    public Node minimumNode() throws Exception
+    {
+        if (root == null)
+            throw new Exception("tree is empty");
+
+        Node current = root;
+
+        while (current.left != null)
+            current = current.left;
+
+        
+        return current;
+    }
+
+    
+
 
     private void transplant(Node node1, Node node2)
     {
