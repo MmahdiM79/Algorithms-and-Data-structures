@@ -84,4 +84,22 @@ public class BinarySearchTree
         size++;
         return newNode;
     }
+
+
+
+    private void transplant(Node node1, Node node2)
+    {
+        if (node1.p == null)
+            root = node2;
+
+        else if (node1 == node1.p.left)
+            node1.p.left = node2;
+
+        else
+            node1.p.right = node2;
+
+
+        if (node2 != null)
+            node2.p = node1.p;
+    }
 }
