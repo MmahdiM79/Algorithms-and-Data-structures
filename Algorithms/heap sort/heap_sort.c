@@ -71,6 +71,14 @@ void max_heapify(HEAP h, int index)
 }
 
 
+void build_max_heap(HEAP h)
+{
+    h.size = h.length;
+    for (int i = (h.length/2)-1; i >= 0; i--)
+        max_heapify(h, i);
+}
+
+
 
 
 
