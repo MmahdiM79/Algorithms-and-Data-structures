@@ -25,6 +25,14 @@ HEAP *new_heap(long capacity)
     return output;
 }
 
+void add_value(HEAP h, int value)
+{
+    h.array[(h.length)++] = value;
+}
+
+
+
+
 
 
 #define PARENT(x) (x/2)
@@ -36,8 +44,6 @@ HEAP *new_heap(long capacity)
             x = y;\
             y = hold;\
         }
-
-
 
 
 
