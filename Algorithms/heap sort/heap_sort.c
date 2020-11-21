@@ -8,16 +8,18 @@
 typedef struct __HEAP__
 {
     int *array;
+    long capacity;
     long length;
     long size;
 } HEAP;
 
-HEAP *new_heap(long length)
+HEAP *new_heap(long capacity)
 {
     HEAP *output = (HEAP *)malloc(sizeof(HEAP));
 
-    output->array = (int *)malloc(length * sizeof(int));
-    output->length = length;
+    output->array = (int *)malloc(capacity * sizeof(int));
+    output->capacity = capacity;
+    output->length = 0;
     output->size = 0;
 
     return output;
@@ -28,6 +30,12 @@ HEAP *new_heap(long length)
 #define PARENT(x) (x/2)
 #define RIGHT(x) (2*x + 1)
 #define LEFT(x) (2*x)
+
+
+
+
+
+
 
 
 
