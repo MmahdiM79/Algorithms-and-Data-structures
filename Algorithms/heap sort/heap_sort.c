@@ -79,6 +79,23 @@ void build_max_heap(HEAP h)
 }
 
 
+void heap_sort(int array[])
+{
+    HEAP *h = new_heap(sizeof(array)/sizeof(array[0]));
+    h->array = array;
+    h->length = h->capacity;
+
+
+    build_max_heap(h);
+    for (int i = h->length; i > 2; i--)
+    {
+        swap_int(array[1], array[i]);
+        h->size--;
+        max_heapify(h, 0);
+    }
+}
+
+
 
 
 
