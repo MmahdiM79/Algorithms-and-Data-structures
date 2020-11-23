@@ -47,14 +47,14 @@ void add_value(HEAP h, int value)
 
 
 
-void max_heapify(HEAP h, int index)
+void max_heapify(HEAP *h, int index)
 {
     int r = RIGHT(index);
     int l = LEFT(index);
 
 
     int largest;
-    if (l <= h.size && h.array[l] > h.array[index])
+    if (l <= h->size && h->array[l] > h->array[index])
         largest = l;
     else 
         largest = index;
@@ -65,7 +65,7 @@ void max_heapify(HEAP h, int index)
 
     if (largest != index)
     {
-        swap_int(h.array[index], h.array[largest]);
+        swap_int(h->array[index], h->array[largest]);
         max_heapify(h, largest);
     }
 }
