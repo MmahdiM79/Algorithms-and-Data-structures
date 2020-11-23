@@ -59,7 +59,7 @@ void max_heapify(HEAP *h, int index)
     else 
         largest = index;
 
-    if (r <= h.size && h.array[r] > h.array[largest])
+    if (r <= h->size && h->array[r] > h->array[largest])
         largest = r;
 
 
