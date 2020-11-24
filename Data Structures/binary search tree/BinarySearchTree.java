@@ -86,6 +86,40 @@ public class BinarySearchTree
     }
 
 
+    public void delete(Node node) throws Exception
+    {
+        if (this.size == 0)
+            throw new Exception("this binary search tree is empty");
+
+        
+        if (node.left == null)
+            transplant(node, node.right);
+
+        else if (node.right == null)
+            transplant(node, node.left);
+
+        else
+        {
+            Node r = root;
+            root = node.right;
+            Node hold = minimumNode();
+            root = r;
+
+            if (hold.p != node)
+            {
+                transplant(hold, hold.right);
+                hold.right = node.right;
+                hold.right.p = hold;
+            }
+
+            transplant(node, hold);
+            hold.left = node.left;
+            hold.left.p = hold;
+        }
+
+        size--;
+    }
+
     /**
      * @return the node that have the minimum value in this tree
      * @throws Exception if tree is empty
