@@ -86,6 +86,12 @@ public class BinarySearchTree
     }
 
 
+    /**
+     * This method delete the given node from this tree
+     * 
+     * @param node : node to remove
+     * @throws Exception if this tree is empty
+     */
     public void delete(Node node) throws Exception
     {
         if (this.size == 0)
@@ -119,6 +125,7 @@ public class BinarySearchTree
 
         size--;
     }
+    
 
     /**
      * @return the node that have the minimum value in this tree
