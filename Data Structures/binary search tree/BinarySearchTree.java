@@ -145,6 +145,21 @@ public class BinarySearchTree
         return current;
     }
 
+
+    public Node maximumNode() throws Exception
+    {
+        if (root == null)
+            throw new Exception("tree is empty");
+
+        Node current = root;
+
+        while (current.right != null)
+            current = current.right;
+
+        
+        return current;
+    }
+
     
 
 
