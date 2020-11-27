@@ -146,6 +146,10 @@ public class BinarySearchTree
     }
 
 
+    /**
+     * @return the node that have the maximum value in this tree
+     * @throws Exception if tree is empty
+     */
     public Node maximumNode() throws Exception
     {
         if (root == null)
