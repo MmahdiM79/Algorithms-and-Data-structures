@@ -165,6 +165,12 @@ public class BinarySearchTree
     }
 
 
+    /**
+     * This method search for a value in this tree
+     * 
+     * @param value : value to find
+     * @return the Node that has the given value. otherwise returns null
+     */
     public Node search_recursive(int value)
     {
         Node current = root;
