@@ -164,6 +164,26 @@ public class BinarySearchTree
         return current;
     }
 
+
+    public Node search_recursive(int value)
+    {
+        Node current = root;
+        Node output = null;
+
+        if (current == null || current.value = value)
+            return current;
+
+        if (value < current.value)
+            root = current.left;
+        else 
+            root = current.right;
+
+        
+        output = search_recursive(value);
+        root = current;
+        return output;
+    }
+
     
 
 
