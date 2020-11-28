@@ -16,6 +16,9 @@ typedef struct __NODE__
     struct __NODE__ *left;
 } NODE;
 
+#define RED 'r'
+#define BLACK 'b'
+
 NODE *new_node(int value, char color)
 {
     NODE *output = (NODE *)malloc(sizeof(NODE));
