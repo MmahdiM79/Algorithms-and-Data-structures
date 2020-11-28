@@ -16,6 +16,20 @@ typedef struct __NODE__
     struct __NODE__ *left;
 } NODE;
 
+NODE *new_node(int value, char color)
+{
+    NODE *output = (NODE *)malloc(sizeof(NODE));
+
+    output->value = value;
+    output->color = color;
+
+    output->p = NULL;
+    output->right = NULL;
+    output->left = NULL;
+
+    return output;
+}
+
 
 
 typedef struct __RED_BLACK_TREE__
