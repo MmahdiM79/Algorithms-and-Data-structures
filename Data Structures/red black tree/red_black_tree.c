@@ -59,6 +59,10 @@ RBT *new_rbt()
 
 
 
+
+
+
+
         /*          functions           */
 
 
@@ -84,6 +88,32 @@ void left_rotate(RBT *t, NODE *x)
 
 
     y->left = x;              // put x on y's left
+    x->p = y;
+}
+
+
+void right_rotate(RBT *t, NODE *x)
+{
+    NODE *y = x->left;       // set y
+    x->left = y->right;      // turn y's right subtree into x's left subtree
+
+    if (y->right != t->nil)
+        y->right->p = x;
+
+    y->p = x->p;             // link x's parent to y
+
+
+    if (x->p == t->nil)
+        t->root = y;
+    
+    else if (x == x->p->right)
+        x->p->right = y;
+
+    else
+        x->p->left = y;
+
+
+    y->right = x;              // put x on y's right
     x->p = y;
 }
 
