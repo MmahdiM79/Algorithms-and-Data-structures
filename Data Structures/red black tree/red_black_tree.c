@@ -40,6 +40,17 @@ typedef struct __RED_BLACK_TREE__
     long size;
 } RBT;
 
+RBT *new_rbt()
+{
+    RBT *output = (RBT *)malloc(sizeof(RBT));
+
+    output->nil = new_node(0, 'b');
+    output->root = NULL;
+    output->size = 0;
+
+    return 0;
+}
+
 
 
 
