@@ -121,6 +121,61 @@ void right_rotate(RBT *t, NODE *x)
 }
 
 
+void rb_insert_fixup(RBT *t, NODE *added_node)
+{
+    while (added_node->p->color == RED)
+    {
+        if (added_node->p == added_node->p->p->left)
+        {
+            NODE *uncle = added_node->p->p->right;
+
+            if (uncle->color == RED)
+            {
+                added_node->p->color = BLACK;
+                uncle->color = BLACK;
+                added_node->p->p->color = RED;
+                added_node = added_node->p->p;
+            }
+            else if (added_node == added_node->p->right)
+            {
+                added_node = added_node->p;
+                left_rotate(t, added_node);
+            }
+
+            added_node->p->color = BLACK;
+            added_node->p->p->color = RED;
+            right_rotate(t, added_node->p->p);
+        }
+        else
+        {
+            NODE *uncle = added_node->p->p->left;
+
+            if (uncle->color == RED)
+            {
+                added_node->p->color = BLACK;
+                uncle->color = BLACK;
+                added_node->p->p->color = RED;
+                added_node = added_node->p->p;
+            }
+            else if (added_node == added_node->p->left)
+            {
+                added_node = added_node->p;
+                right_rotate(t, added_node);
+            }
+
+            added_node->p->color = BLACK;
+            added_node->p->p->color = RED;
+            left_rotate(t, added_node->p->p);
+        }
+    }
+
+    t->root->color = BLACK;
+}
+
+
+
+
+
 
 
 
