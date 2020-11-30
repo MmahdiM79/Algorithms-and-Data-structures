@@ -42,6 +42,20 @@ void max_heapify(int array[], int size, int i)
 }
 
 
+void heap_sort(int array[], int size)
+{
+    for (int i = size/2 - 1; i >= 0; i--)
+        max_heapify(array, size, i);
+ 
+
+    for (int i = size-1; i > 0; i--) 
+    {
+        swap(array[0], array[i]);
+        max_heapify(array, i, 0);
+    }
+}
+
+
 
 
 
