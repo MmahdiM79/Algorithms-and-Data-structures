@@ -56,6 +56,16 @@ void heap_sort(int array[], int size)
 }
 
 
+void printArray(int array[], int size)
+{
+    printf("[");
+
+    for (int i = 0; i < size; i++)
+        printf("%d, ", array[i]);
+
+    printf("\b\b]\n");
+}
+
 
 
 
