@@ -216,6 +216,32 @@ public class BinarySearchTree
         return null;
     }
 
+
+    /**
+     * @return the next node in order walk
+     */
+    public Node successor()
+    {
+        if (root == null)
+            return null;
+
+
+        Node current = root;
+        if (current.right != null)
+            return minimumNode();
+
+
+        Node hold = current.p;
+        while (hold != null && current != hold.right)
+        {
+            current = hold;
+            hold = hold.p;
+        }
+
+
+        return hold;
+    }
+
     
 
 
