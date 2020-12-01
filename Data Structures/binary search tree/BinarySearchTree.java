@@ -228,7 +228,8 @@ public class BinarySearchTree
 
         Node current = root;
         if (current.right != null)
-            return minimumNode();
+            try { return minimumNode(); }
+            catch (Exception e) {return null; }
 
 
         Node hold = current.p;
