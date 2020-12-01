@@ -190,6 +190,32 @@ public class BinarySearchTree
         return output;
     }
 
+
+    /**
+     * This function search for a value in this tree
+     * 
+     * @param value : value that you looking for
+     * @return the node which has the given value. if your given value isn't available in this tree, returns null
+     */
+    public Node search(int value)
+    {
+        Node current = root;
+        
+        while (current != null)
+        {
+            if (current.value == value)
+                return current;
+
+            if (value < current.value)
+                current = current.left;
+            else
+                current = current.right;
+        }
+
+
+        return null;
+    }
+
     
 
 
