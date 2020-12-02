@@ -304,12 +304,35 @@ public class BinarySearchTree
             Node current = root;
 
             System.out.print(current.value + " ");
-            
+
             root = current.left;
             walkInorder();
 
             root = current.left;
             walkInorder();
+
+
+            root = current;
+        }
+    }
+
+
+    /**
+     * This method walk values postorder and print them in terminal
+     */
+    public void walkPostorder()
+    {
+        if (root != null)
+        {
+            Node current = root;
+
+            root = current.left;
+            walkInorder();
+            
+            root = current.left;
+            walkInorder();
+            
+            System.out.print(current.value + " ");
 
 
             root = current;
