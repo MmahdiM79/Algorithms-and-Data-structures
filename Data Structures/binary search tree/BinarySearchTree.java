@@ -293,6 +293,29 @@ public class BinarySearchTree
         }
     }
 
+
+    /**
+     * This method walk values preorder and print them in terminal
+     */
+    public void walkPreorder()
+    {
+        if (root != null)
+        {
+            Node current = root;
+
+            System.out.print(current.value + " ");
+            
+            root = current.left;
+            walkInorder();
+
+            root = current.left;
+            walkInorder();
+
+
+            root = current;
+        }
+    }
+
     
 
 
