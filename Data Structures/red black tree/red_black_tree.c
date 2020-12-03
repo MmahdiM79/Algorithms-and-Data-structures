@@ -224,6 +224,84 @@ void rb_transplant(RBT *t, NODE *u, NODE *v)
 }
 
 
+void rb_delete_fixup(RBT *t, NODE *z)
+{
+    while (z != t->root && z->color == BLACK)
+    {
+        if (z == z->p->left)
+        {
+            NODE *hold = z->p->right;
+
+            if (hold->color == RED)
+            {
+                hold->color = BLACK;
+                z->p->color = RED;
+                left_rotate(t, z->p);
+
+                hold = z->p->right;
+            }
+
+            if (hold->left->color == BLACK && hold->right->color == BLACK)
+            {
+                hold->color = RED;
+                z = z->p;
+            }
+            else if (hold->right->color == BLACK)
+            {
+                hold->left->color = BLACK;
+                hold->color = RED;
+                right_rotate(t, hold);
+
+                hold = z->p->right;
+            }
+
+            hold->color = z->p->color;
+            z->p->color = BLACK;
+            hold->right->color = BLACK;
+            left_rotate(t, z->p);
+            z = t->root;
+        }
+
+        else
+        {
+            if (z == z->p->left)
+            {
+                NODE *hold = z->p->left;
+
+                if (hold->color == RED)
+                {
+                    hold->color = BLACK;
+                    z->p->color = RED;
+                    right_rotate(t, z->p);
+
+                    hold = z->p->left;
+                }
+
+                if (hold->right->color == BLACK && hold->left->color == BLACK)
+                {
+                    hold->color = RED;
+                    z = z->p;
+                }
+                else if (hold->left->color == BLACK)
+                {
+                    hold->right->color = BLACK;
+                    hold->color = RED;
+                    left_rotate(t, hold);
+
+                    hold = z->p->left;
+                }
+
+                hold->color = z->p->color;
+                z->p->color = BLACK;
+                hold->left->color = BLACK;
+                right_rotate(t, z->p);
+                z = t->root;
+            }
+        }
+    }
+}
+
+
 
 
 
