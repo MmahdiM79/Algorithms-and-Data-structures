@@ -209,6 +209,21 @@ void rb_insert(RBT *t, NODE *new_node)
 }
 
 
+void rb_transplant(RBT *t, NODE *u, NODE *v)
+{
+    if (u->p == t->nil)
+        t->root = v;
+
+    else if (u == u->p->left)
+        u->p->left = v;
+
+    else
+        u->p->right = v;
+
+    v->p = u->p;
+}
+
+
 
 
 
