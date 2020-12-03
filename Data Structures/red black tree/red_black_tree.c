@@ -173,6 +173,42 @@ void rb_insert_fixup(RBT *t, NODE *added_node)
 }
 
 
+void rb_insert(RBT *t, NODE *new_node)
+{
+    NODE *y = t->nil;
+    NODE *x = t->root;
+
+    while (x != t->nil)
+    {
+        y = x;
+        
+        if (new_node->value < x->value)
+            x = x->left;
+        else
+            x = x->right;
+    }
+
+    new_node->p = y;
+
+
+    if (y == t->nil)
+        t->root = new_node;
+
+    else if (new_node->value < y->value)
+        y->left = new_node;
+
+    else
+        y->right = new_node;
+
+
+    new_node->left = t->nil;
+    new_node->right = t->nil;
+    new_node->color = RED;
+
+    rb_insert_fixup(t, new_node);
+}
+
+
 
 
 
