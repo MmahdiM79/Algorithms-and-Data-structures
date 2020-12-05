@@ -34,6 +34,16 @@ def max_heapify(array :list, i :int) -> None:
 
 
 
+def heap_sort(array :list) -> None:
+
+    for i in range((len(array)//2 -1), -1, -1):
+        max_heapify(array, i)
+
+    for i in range((len(array)-1), 0, -1):
+        array[0], array[i] = array[i], array[0]
+        max_heapify(array, i)
+
+
 
 
 
