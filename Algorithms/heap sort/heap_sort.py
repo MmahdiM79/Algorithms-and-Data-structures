@@ -12,24 +12,24 @@ def LEFT(x :int) -> int:
 
 
 
-def max_heapify(array :list, i :int) -> None:
+def max_heapify(array :list, heap_size :int, i :int) -> None:
 
     l = LEFT(i)
     r = RIGHT(i)
 
 
-    if l < len(array) and array[l] > array[i]:
+    if l < heap_size and array[l] > array[i]:
         largest = l
     else:
         largest = i
 
-    if r < len(array) and array[r] > array[largest]:
+    if r < heap_size and array[r] > array[largest]:
         largest = r
 
 
     if largest != i:
         array[i], array[largest] = array[largest], array[i]
-        max_heapify(array, largest)
+        max_heapify(array, heap_size, largest)
     
 
 
