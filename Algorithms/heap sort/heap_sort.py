@@ -15,7 +15,7 @@ def LEFT(x :int) -> int:
 def max_heapify(array :list, i :int) -> None:
 
     l = LEFT(i)
-    r = RIGHT(r)
+    r = RIGHT(i)
 
 
     if l < len(array) and array[l] > array[i]:
