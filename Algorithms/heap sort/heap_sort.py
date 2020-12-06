@@ -48,5 +48,21 @@ def heap_sort(array :list) -> None:
 
 
 
+
+
+
 if __name__ == "__main__":
+
+    print("\n\n ---------------- \n")
+    print("a simple test:\n")
+    
+
+    array = [2.7, 21, 43, 0.5, -1, 2.5, -11, 77, 50, 101, 72, 16]
+    print(f"before sort: {array}")
+
+    heap_sort(array)
+    print(f"after sort: {array}")
+
+
+    print("\n ---------------- \n\n")
     
