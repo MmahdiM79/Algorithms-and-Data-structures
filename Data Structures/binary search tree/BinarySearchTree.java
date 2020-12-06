@@ -398,7 +398,7 @@ public class BinarySearchTree
 
 
         // add a new value
-        System.out.print("\ninorder walk after add 12:  ");
+        System.out.print("\n\ninorder walk after add 12:  ");
         Node node = t.insert(12);
         t.walkInorder();
         System.out.print("\n");
@@ -408,7 +408,7 @@ public class BinarySearchTree
         System.out.print("\ninorder walk after remove 12:  ");
         t.delete(node);
         t.walkInorder();
-        System.out.print("\n");
+        System.out.print("\n\n");
 
 
         // find minimum
