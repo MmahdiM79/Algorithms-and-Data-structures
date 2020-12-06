@@ -285,7 +285,7 @@ public class BinarySearchTree
 
             System.out.print(current.value + " ");
 
-            root = current.left;
+            root = current.right;
             walkInorder();
 
 
