@@ -327,10 +327,10 @@ public class BinarySearchTree
             Node current = root;
 
             root = current.left;
-            walkInorder();
+            walkPostorder();
             
             root = current.left;
-            walkInorder();
+            walkPostorder();
             
             System.out.print(current.value + " ");
 
