@@ -357,4 +357,68 @@ public class BinarySearchTree
         if (node2 != null)
             node2.p = node1.p;
     }
+
+
+
+
+
+
+
+
+    // a simple program to test this class
+    public static void main(String[] args) throws Exception
+    {
+        System.out.println("\n\n ---------------- \n");
+        System.out.println("a simple test:\n");
+        
+
+        // create a new binary tree
+        BinarySearchTree t = new BinarySearchTree();
+
+        // add some values
+        t.insert(3);
+        t.insert(5);
+        t.insert(0);
+        t.insert(6);
+        t.insert(7);
+        t.insert(9);
+        t.insert(2);
+        t.insert(11);
+        t.insert(1);
+        t.insert(10);
+        t.insert(8);
+
+
+        // tree walks
+        System.out.println("tree walks:");
+        System.out.print("\tpreorder walk : "); t.walkPreorder(); System.out.print("\n");
+        System.out.print("\tinorder walk  : "); t.walkInorder(); System.out.print("\n");
+        System.out.print("\tpostorder walk: "); t.walkPostorder(); System.out.print("\n");
+
+
+
+        // add a new value
+        System.out.print("\ninorder walk after add 12:  ");
+        Node node = t.insert(12);
+        t.walkInorder();
+        System.out.print("\n");
+
+
+        // remove a node
+        System.out.print("\ninorder walk after remove 12:  ");
+        t.delete(node);
+        t.walkInorder();
+        System.out.print("\n");
+
+
+        // find minimum
+        System.out.println("\nminimum value in this tree:  " + t.minimumNode().value);
+        // find maximum
+        System.out.println("\nmaximum value in this tree:  " + t.maximumNode().value);
+
+
+
+
+        System.out.println("\n ---------------- \n\n");
+    }
 }
