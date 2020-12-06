@@ -329,7 +329,7 @@ public class BinarySearchTree
             root = current.left;
             walkPostorder();
             
-            root = current.left;
+            root = current.right;
             walkPostorder();
             
             System.out.print(current.value + " ");
