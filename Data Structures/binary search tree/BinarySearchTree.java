@@ -308,7 +308,7 @@ public class BinarySearchTree
             root = current.left;
             walkPreorder();
 
-            root = current.left;
+            root = current.right;
             walkPreorder();
 
 
