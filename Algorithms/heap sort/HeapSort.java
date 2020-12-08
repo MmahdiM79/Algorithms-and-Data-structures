@@ -10,5 +10,13 @@
  */
 public class HeapSort 
 {
-    
+    private int right(int x)
+    {
+        return 2*x + 2;
+    }
+
+    private int left(int x)
+    {
+        return right(x) - 1;
+    }
 }
