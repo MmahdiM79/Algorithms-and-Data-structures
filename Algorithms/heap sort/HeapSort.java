@@ -49,4 +49,25 @@ public class HeapSort
             maxHeapify(array, heapSize, largest);
         }
     }
+
+
+    /**
+     * This method sort your array with heap sort algorithm
+     * 
+     * @param array : array to sort
+     */
+    public void heapSort(int[] array)
+    {
+        for (int i = 0; i < (array.length/2 - 1); i++)
+            maxHeapify(array, array.length, i);
+            
+        for (int i = array.length-1; i > 0; i--)
+        {
+            int hold = array[0];
+            array[0] = array[i];
+            array[i] = hold;
+
+            maxHeapify(array, i, 0);
+        }
+    }
 }
