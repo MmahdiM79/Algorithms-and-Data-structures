@@ -1,5 +1,4 @@
-
-
+import java.util.Arrays;
 
 /**
  * Use {@link BubbleSort#heapSort(int[])} to sort your {@code int} Array
@@ -69,5 +68,29 @@ public class HeapSort
 
             maxHeapify(array, i, 0);
         }
+    }
+
+
+
+    /**
+     * A simple example for {@link BubbleSort#heapSort(int[])}
+     *  
+     * @param args
+     */
+    public static void main(String[] args) 
+    {
+        System.out.println("\n\n ---------------- \n");
+        System.out.println("a simple test:\n");
+        
+
+        int[] array = {8, 10, 252, 0, -34, 23, -11, 43, 50, 101, 7, 33, 12};
+        System.out.println("before sort: " + Arrays.toString(array));
+
+
+        heapSort(array);
+        System.out.println("after sort: " + Arrays.toString(array));
+
+
+        System.out.println("\n ---------------- \n\n");
     }
 }
