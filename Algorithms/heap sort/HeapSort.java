@@ -2,7 +2,7 @@
 
 
 /**
- * Use {@link BubbleSort#heapSort(int...)} to sort your {@code int} Array
+ * Use {@link BubbleSort#heapSort(int[])} to sort your {@code int} Array
  * 
  * 
  * @author Mohammad Mahdi Malmasi
@@ -11,20 +11,20 @@
 public class HeapSort 
 {
     // return the index of the right child of the given index
-    private int right(int x)
+    private static int right(int x)
     {
         return 2*x + 2;
     }
 
     // return the index of the left child of the given index
-    private int left(int x)
+    private static int left(int x)
     {
         return right(x) - 1;
     }
 
 
     // max heap your array from the given index until the end
-    private void maxHeapify(int[] array, int heapSize, int i)
+    private static void maxHeapify(int[] array, int heapSize, int i)
     {
         int r = right(i);
         int l = left(i);
@@ -56,7 +56,7 @@ public class HeapSort
      * 
      * @param array : array to sort
      */
-    public void heapSort(int[] array)
+    public static void heapSort(int[] array)
     {
         for (int i = 0; i < (array.length/2 - 1); i++)
             maxHeapify(array, array.length, i);
