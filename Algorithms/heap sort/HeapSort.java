@@ -23,7 +23,7 @@ public class HeapSort
     }
 
 
-
+    // max heap your array from the given index until the end
     private void maxHeapify(int[] array, int heapSize, int i)
     {
         int r = right(i);
