@@ -21,4 +21,32 @@ public class HeapSort
     {
         return right(x) - 1;
     }
+
+
+
+    private void maxHeapify(int[] array, int heapSize, int i)
+    {
+        int r = right(i);
+        int l = left(i);
+
+
+        int largest;
+        if (l < heapSize && array[l] > array[i])
+            largest = l;
+        else
+            largest = i;
+
+        if (r < heapSize && array[r] > array[largest])
+            largest = r;
+
+
+        if (largest != i)
+        {
+            int hold = array[i];
+            array[i] = array[largest];
+            array[largest] = hold;
+
+            maxHeapify(array, heapSize, largest);
+        }
+    }
 }
