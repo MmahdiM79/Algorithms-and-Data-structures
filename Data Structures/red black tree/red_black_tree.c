@@ -174,6 +174,27 @@ void inorder_walk(RBT *t)
 }
 
 
+void preorder_walk(RBT *t)
+{
+    if (t->root != t->nil)
+    {
+        NODE *hold = t->root;
+
+
+        printf("%d ", hold->value);
+
+        t->root = hold->left;
+        preorder_walk(t);
+
+        t->root = hold->right;
+        preorder_walk(t);
+
+
+        t->root = hold;
+    }
+}
+
+
 void rb_insert_fixup(RBT *t, NODE *added_node)
 {
     while (added_node->p->color == RED)
