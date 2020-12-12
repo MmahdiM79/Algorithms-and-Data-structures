@@ -53,7 +53,7 @@ RBT *new_rbt()
     output->root = output->nil;
     output->size = 0;
 
-    return 0;
+    return output;
 }
 
 
@@ -207,7 +207,6 @@ void rb_insert(RBT *t, NODE *new_node)
     new_node->color = RED;
 
     rb_insert_fixup(t, new_node);
-    printf("end insert");
 }
 
 
@@ -317,6 +316,7 @@ void rb_delete_fixup(RBT *t, NODE *z)
 
 int main()
 {
-
+    RBT *t = new_rbt();
+    rb_insert(t, new_node(1, RED));
     return 0;
 }
