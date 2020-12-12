@@ -48,7 +48,7 @@ RBT *new_rbt()
     RBT *output = (RBT *)malloc(sizeof(RBT));
 
     output->nil = new_node(0, 'b');
-    output->root = NULL;
+    output->root = output->nil;
     output->size = 0;
 
     return 0;
@@ -162,7 +162,6 @@ void rb_insert_fixup(RBT *t, NODE *added_node)
                 added_node = added_node->p;
                 right_rotate(t, added_node);
             }
-
             added_node->p->color = BLACK;
             added_node->p->p->color = RED;
             left_rotate(t, added_node->p->p);
@@ -313,11 +312,8 @@ void rb_delete_fixup(RBT *t, NODE *z)
 
 
 
-
 int main()
 {
-
-
 
     return 0;
 }
