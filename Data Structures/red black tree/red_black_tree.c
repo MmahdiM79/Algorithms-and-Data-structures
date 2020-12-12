@@ -153,6 +153,27 @@ NODE *rb_maximum(RBT *t)
 }
 
 
+void inorder_walk(RBT *t)
+{
+    if (t->root != t->nil)
+    {
+        NODE *hold = t->root;
+
+
+        t->root = hold->left;
+        inorder_walk(t);
+
+        printf("%d ", hold->value);
+
+        t->root = hold->right;
+        inorder_walk(t);
+
+
+        t->root = hold;
+    }
+}
+
+
 void rb_insert_fixup(RBT *t, NODE *added_node)
 {
     while (added_node->p->color == RED)
