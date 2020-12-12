@@ -123,6 +123,21 @@ void right_rotate(RBT *t, NODE *x)
 }
 
 
+NODE *rb_minimum(RBT *t)
+{
+    if (t->root == t->nil)
+        return NULL;
+
+        
+    NODE *current = t->root;
+
+    while (current->left != t->nil)
+        current = current->left;
+
+    return current;
+}
+
+
 void rb_insert_fixup(RBT *t, NODE *added_node)
 {
     while (added_node->p->color == RED)
