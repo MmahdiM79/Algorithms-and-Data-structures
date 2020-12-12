@@ -128,11 +128,26 @@ NODE *rb_minimum(RBT *t)
     if (t->root == t->nil)
         return NULL;
 
-        
+
     NODE *current = t->root;
 
     while (current->left != t->nil)
         current = current->left;
+
+    return current;
+}
+
+
+NODE *rb_maximum(RBT *t)
+{
+    if (t->root == t->nil)
+        return NULL;
+
+        
+    NODE *current = t->root;
+
+    while (current->right != t->nil)
+        current = current->right;
 
     return current;
 }
