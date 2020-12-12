@@ -48,6 +48,8 @@ RBT *new_rbt()
     RBT *output = (RBT *)malloc(sizeof(RBT));
 
     output->nil = new_node(0, 'b');
+    output->nil->right = output->nil;
+    output->nil->left = output->nil;
     output->root = output->nil;
     output->size = 0;
 
@@ -205,6 +207,7 @@ void rb_insert(RBT *t, NODE *new_node)
     new_node->color = RED;
 
     rb_insert_fixup(t, new_node);
+    printf("end insert");
 }
 
 
