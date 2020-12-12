@@ -396,6 +396,55 @@ void rb_delete_fixup(RBT *t, NODE *z)
 }
 
 
+void rb_delete(RBT *t, NODE *node_to_delete)
+{
+    NODE *x;
+    NODE *y = node_to_delete;
+    char y_original_color = y->color;
+
+
+    if (node_to_delete->left = t->nil)
+    {
+        x = node_to_delete->right;
+        rb_transplant(t, node_to_delete, node_to_delete->right);
+    }
+
+    else if (node_to_delete->right == t->nil)
+    {
+        x = node_to_delete->left;
+        rb_transplant(t, node_to_delete, node_to_delete->left);
+    }
+
+    else
+    {
+        y = rb_minimum(t);
+        y_original_color = y->color;
+
+        x = y->right;
+
+
+        if (y->p == node_to_delete)
+            x->p = y;
+        
+        else
+        {
+            rb_transplant(t, y, y->right);
+            y->right = node_to_delete->right;
+            y->right->p = y;
+        }
+
+        rb_transplant(t, node_to_delete, y);
+        y->left = node_to_delete->left;
+        y->left->p = y;
+        y->color = node_to_delete->color;
+    }
+
+
+    if (y_original_color == BLACK)
+        rb_delete_fixup(t, x);
+}
+
+
 
 
 
