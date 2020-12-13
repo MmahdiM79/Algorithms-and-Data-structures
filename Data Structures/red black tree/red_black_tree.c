@@ -458,7 +458,67 @@ void rb_delete(RBT *t, NODE *node_to_delete)
 
 int main()
 {
+
+
+    printf("\n\n ---------------- \n\n");
+    printf("a simple test:\n\n");
+
+
+    // create a new binary tree
     RBT *t = new_rbt();
+
+    // add some nodes
+    rb_insert(t, new_node(2, RED));
+    rb_insert(t, new_node(4, RED));
     rb_insert(t, new_node(1, RED));
+    rb_insert(t, new_node(5, RED));
+    rb_insert(t, new_node(8, RED));
+    rb_insert(t, new_node(6, RED));
+    rb_insert(t, new_node(9, RED));
+    rb_insert(t, new_node(0, RED));
+    rb_insert(t, new_node(10, RED));
+    rb_insert(t, new_node(3, RED));
+    rb_insert(t, new_node(11, RED));
+    rb_insert(t, new_node(7, RED));
+
+
+    // tree walks
+    printf("tree walks:\n");
+    printf("\tpreorder walk :  "); preorder_walk(t); printf("\n");
+    printf("\tinorder walk  :  "); inorder_walk(t); printf("\n");
+    printf("\tpostorder walk:  "); postorder_walk(t); printf("\n");
+
+
+    // add a new node
+    printf("\ninorder walk after add a new node with value 12:  "); 
+    NODE *node = new_node(12, RED);
+    rb_insert(t, node);
+    inorder_walk(t);
+    printf("\n");
+
+
+    // remove a node
+    printf("\ninorder walk after remove the node with value 12:  "); 
+    rb_delete(t, node);
+    inorder_walk(t);
+    printf("\n");
+
+
+    // find minimum
+    printf("\nminimum value in this tree:  %d\n", rb_minimum(t)->value);
+     // find maximum
+    printf("\nmaximum value in this tree:  %d\n", rb_minimum(t)->value);
+
+
+
+
+
+
+    printf("\n\n ---------------- \n\n\n");
+
+
+
+
+
     return 0;
 }
