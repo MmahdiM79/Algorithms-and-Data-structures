@@ -403,7 +403,7 @@ void rb_delete(RBT *t, NODE *node_to_delete)
     char y_original_color = y->color;
 
 
-    if (node_to_delete->left = t->nil)
+    if (node_to_delete->left == t->nil)
     {
         x = node_to_delete->right;
         rb_transplant(t, node_to_delete, node_to_delete->right);
