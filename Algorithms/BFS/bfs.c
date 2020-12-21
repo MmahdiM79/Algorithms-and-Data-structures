@@ -1,4 +1,6 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
+
 
 
 
@@ -18,6 +20,15 @@ typedef struct __GRAPH__
     int number_of_V;
     int number_of_E;
 } Graph;
+
+Graph *new_Graph(int number_of_V)
+{
+    Graph *out = malloc(sizeof(Graph));
+    out->number_of_V = number_of_V;
+    out->adj = malloc(out->number_of_V*sizeof(Graph *));
+
+    return out;
+}
 
 
 
