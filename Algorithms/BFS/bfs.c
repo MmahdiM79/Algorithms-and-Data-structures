@@ -6,12 +6,24 @@
 
 
 
+
+
 typedef struct __NODE__
 {
     char color;
     int value;
     struct __NODE__ *neighbor;
 } Node;
+
+Node *new_Node(int value)
+{
+    Node *out = malloc(sizeof(Node));
+    out->value = value;
+    out->neighbor = NULL;
+    out->color = '\0';
+
+    return out;
+}
 
 
 typedef struct __GRAPH__
