@@ -6,6 +6,14 @@
 
 
 
+// colors
+#define WHITE 'w';
+#define GRAY 'g';
+#define BLACK 'b';
+
+
+
+
 
 
 typedef struct __NODE__
