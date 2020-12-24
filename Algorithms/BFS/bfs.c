@@ -20,6 +20,8 @@ typedef struct __NODE__
 {
     char color;
     int value;
+    int d;
+    Node *p;
     struct __NODE__ *neighbor;
 } Node;
 
