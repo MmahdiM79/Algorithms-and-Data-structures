@@ -29,6 +29,8 @@ Node *new_Node(int value)
 {
     Node *out = malloc(sizeof(Node));
     out->value = value;
+    out->d = 0;
+    out->p = NULL;
     out->neighbor = NULL;
     out->color = '\0';
 
