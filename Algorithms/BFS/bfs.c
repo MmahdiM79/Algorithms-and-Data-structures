@@ -57,6 +57,28 @@ Graph *new_Graph(int number_of_V)
 
 
 
+
+void BFS(Graph *g, Node *s)
+{
+    Node *u;
+    for (int i = 0; i < g->number_of_V; i++)
+    {
+        if (&g->adj[i] == s)
+            continue;
+
+        u = g->adj[i];
+        u->color = WHITE;
+        u->d = INT32_MAX;
+        u->p = NULL;
+    }
+
+    s->color = GRAY;
+    s->d = 0;
+    s->p = NULL;
+}
+
+
+
 int main()
 {
     return 0;
