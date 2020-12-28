@@ -11,6 +11,20 @@
 #define GRAY 'g';
 #define BLACK 'b';
 
+/*      queue struct        */
+
+typedef struct __QUEUE__
+{
+    int *arr;
+    unsigned int capacity;
+
+    int head;
+    int tail;
+    int size;
+
+} queue;
+
+
 
 
 
