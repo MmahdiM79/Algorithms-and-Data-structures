@@ -11,8 +11,8 @@
 #define GRAY 'g';
 #define BLACK 'b';
 
-/*      queue struct        */
 
+/*      queue struct        */
 typedef struct __QUEUE__
 {
     int *arr;
@@ -23,6 +23,48 @@ typedef struct __QUEUE__
     int size;
 
 } queue;
+
+queue *newQueue(int capacity)
+{
+    queue *output = (queue *) malloc(sizeof(queue));
+    output->arr = (int *) malloc(capacity*sizeof(int));
+    output->capacity = capacity;
+    output->head = 0;
+    output->tail = 0;
+    output->size = 0;
+
+    return output;
+}
+
+void enqueue(queue *q, int value)
+{
+    if (q->size == q->capacity)
+    {
+        printf("\n\x1b[31m \berror:  \x1b[0m Queue is full\n\n\n"); 
+        exit(EXIT_FAILURE);
+    }
+
+    q->arr[q->tail] = value;
+    q->tail = (q->tail + 1) % q->capacity;
+    q->size++;
+}
+
+int dequeue(queue *q)
+{
+    if (q->size == 0)
+    {
+        printf("\n\x1b[31m \berror:  \x1b[0m Queue is empty\n\n\n"); 
+        exit(EXIT_FAILURE);
+    }
+
+
+    int output = q->arr[q->head];
+
+    q->head = (q->head + 1) % q->capacity;
+    q->size--;
+
+    return output;
+}
 
 
 
