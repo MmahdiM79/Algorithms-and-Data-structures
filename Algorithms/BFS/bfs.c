@@ -2,11 +2,15 @@
 #include <stdlib.h>
 
 
+// types
+typedef struct __NODE__ Node;
+typedef struct __GRAPH__ Graph;
+
 
 /*      queue struct        */
 typedef struct __QUEUE__
 {
-    int *arr;
+    Node **arr;
     unsigned int capacity;
 
     int head;
@@ -18,7 +22,7 @@ typedef struct __QUEUE__
 queue *newQueue(int capacity)
 {
     queue *output = (queue *) malloc(sizeof(queue));
-    output->arr = (int *) malloc(capacity*sizeof(int));
+    *output->arr = (Node *) malloc(capacity*sizeof(Node));
     output->capacity = capacity;
     output->head = 0;
     output->tail = 0;
@@ -27,7 +31,7 @@ queue *newQueue(int capacity)
     return output;
 }
 
-void enqueue(queue *q, int value)
+void enqueue(queue *q, Node *node)
 {
     if (q->size == q->capacity)
     {
@@ -35,12 +39,12 @@ void enqueue(queue *q, int value)
         exit(EXIT_FAILURE);
     }
 
-    q->arr[q->tail] = value;
+    q->arr[q->tail] = node;
     q->tail = (q->tail + 1) % q->capacity;
     q->size++;
 }
 
-int dequeue(queue *q)
+Node *dequeue(queue *q)
 {
     if (q->size == 0)
     {
@@ -49,7 +53,7 @@ int dequeue(queue *q)
     }
 
 
-    int output = q->arr[q->head];
+    Node *output = q->arr[q->head];
 
     q->head = (q->head + 1) % q->capacity;
     q->size--;
@@ -75,14 +79,14 @@ int dequeue(queue *q)
 
 
 
-typedef struct __NODE__
+struct __NODE__
 {
     char color;
     int value;
     long d;
     Node *p;
     struct __NODE__ *neighbor;
-} Node;
+};
 
 Node *new_Node(int value)
 {
@@ -97,12 +101,12 @@ Node *new_Node(int value)
 }
 
 
-typedef struct __GRAPH__
+struct __GRAPH__
 {
     Node (*adj)[];
     int number_of_V;
     int number_of_E;
-} Graph;
+};
 
 Graph *new_Graph(int number_of_V)
 {
