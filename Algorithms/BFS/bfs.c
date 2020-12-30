@@ -3,15 +3,6 @@
 
 
 
-
-
-
-// colors
-#define WHITE 'w';
-#define GRAY 'g';
-#define BLACK 'b';
-
-
 /*      queue struct        */
 typedef struct __QUEUE__
 {
@@ -72,11 +63,23 @@ int dequeue(queue *q)
 
 
 
+
+
+
+// colors
+#define WHITE 'w';
+#define GRAY 'g';
+#define BLACK 'b';
+
+#define INF __LONG_MAX__
+
+
+
 typedef struct __NODE__
 {
     char color;
     int value;
-    int d;
+    long d;
     Node *p;
     struct __NODE__ *neighbor;
 } Node;
@@ -124,7 +127,7 @@ void BFS(Graph *g, Node *s)
 
         u = g->adj[i];
         u->color = WHITE;
-        u->d = INT32_MAX;
+        u->d = INF;
         u->p = NULL;
     }
 
