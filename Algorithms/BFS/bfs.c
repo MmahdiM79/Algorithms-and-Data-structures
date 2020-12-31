@@ -73,9 +73,9 @@ Node *dequeue(queue *q)
 
 
 // colors
-#define WHITE 'w';
-#define GRAY 'g';
-#define BLACK 'b';
+#define WHITE 'w'
+#define GRAY 'g'
+#define BLACK 'b'
 
 #define INF __LONG_MAX__
 
@@ -140,6 +140,28 @@ void BFS(Graph *g, Node *s)
     s->color = GRAY;
     s->d = 0;
     s->p = NULL;
+
+    queue *q = newQueue(g->number_of_V);
+    enqueue(q, s);
+
+    Node *v;
+    while (q->size != 0)
+    {
+        u = dequeue(q);
+        v = u->neighbor;
+        while (v != NULL)
+        {
+            if (v->color == WHITE)
+            {
+                v->color = GRAY;
+                v->d = u->d+1;
+                v->p = u;
+                enqueue(q, v);
+            }
+
+            u->color = BLACK;
+        }
+    }
 }
 
 
