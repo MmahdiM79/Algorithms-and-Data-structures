@@ -24,7 +24,7 @@ typedef struct __QUEUE__
 queue *newQueue(int capacity)
 {
     queue *output = (queue *) malloc(sizeof(queue));
-    *output->arr = (Node *) malloc(capacity*sizeof(Node));
+    *output->arr = (Node *) malloc(capacity*sizeof(Node *));
     output->capacity = capacity;
     output->head = 0;
     output->tail = 0;
@@ -128,7 +128,7 @@ void BFS(Graph *g, Node *s)
     Node *u;
     for (int i = 0; i < g->number_of_V; i++)
     {
-        if (&g->adj[i] == s)
+        if (g->adj[i] == s)
             continue;
 
         u = g->adj[i];
