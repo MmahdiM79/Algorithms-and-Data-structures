@@ -7,6 +7,8 @@ typedef struct __NODE__ Node;
 typedef struct __GRAPH__ Graph;
 
 
+
+
 /*      queue struct        */
 typedef struct __QUEUE__
 {
@@ -85,12 +87,12 @@ struct __NODE__
     int value;
     long d;
     Node *p;
-    struct __NODE__ *neighbor;
+    Node *neighbor;
 };
 
 Node *new_Node(int value)
 {
-    Node *out = malloc(sizeof(Node));
+    Node *out = (Node *)malloc(sizeof(Node));
     out->value = value;
     out->d = 0;
     out->p = NULL;
