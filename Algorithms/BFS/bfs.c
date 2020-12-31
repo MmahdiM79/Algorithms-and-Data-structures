@@ -160,6 +160,7 @@ void BFS(Graph *g, Node *s)
             }
 
             u->color = BLACK;
+            v = v->neighbor;
         }
     }
 }
