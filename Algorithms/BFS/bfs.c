@@ -105,16 +105,16 @@ Node *new_Node(int value)
 
 struct __GRAPH__
 {
-    Node (*adj)[];
+    Node **adj;
     int number_of_V;
     int number_of_E;
 };
 
 Graph *new_Graph(int number_of_V)
 {
-    Graph *out = malloc(sizeof(Graph));
+    Graph *out = (Graph *)malloc(sizeof(Graph));
     out->number_of_V = number_of_V;
-    out->adj = malloc(out->number_of_V*sizeof(Graph *));
+    *out->adj = (Node *)malloc(out->number_of_V*sizeof(Graph *));
 
     return out;
 }
