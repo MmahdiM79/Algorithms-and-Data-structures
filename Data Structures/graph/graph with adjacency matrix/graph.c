@@ -43,12 +43,21 @@ GRAPH *new_graph(long number_of_V)
         /*      Functions       */
 
 
-void add_edge(GRAPH *g, int u, int v)
+void add_edge(GRAPH *g, long u, long v)
 {
     check_V(g, u);
     check_V(g, v);
 
     g->adj[u][v] = 1;
+}
+
+
+void add_edge_weight(GRAPH *g, long u, long v, long weight)
+{
+    check_V(g, u);
+    check_V(g, v);
+
+    g->adj[u][v] = weight;
 }
 
 
