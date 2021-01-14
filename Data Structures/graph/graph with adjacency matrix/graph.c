@@ -61,6 +61,15 @@ void add_edge_weight(GRAPH *g, long u, long v, long weight)
 }
 
 
+int has_edge(GRAPH *g, int u, int v)
+{
+    check_V(g, u);
+    check_V(g, v);
+
+    return (g->adj[u][v] != -1);
+}
+
+
 int main()
 {
     return 0;
