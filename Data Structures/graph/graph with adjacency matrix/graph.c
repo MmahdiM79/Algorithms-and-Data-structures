@@ -70,6 +70,15 @@ int has_edge(GRAPH *g, int u, int v)
 }
 
 
+int has_vertice(GRAPH *g, int v)
+{
+    return (v >= g->number_of_V || v < 0);
+}
+
+
+
+
+
 int main()
 {
     return 0;
