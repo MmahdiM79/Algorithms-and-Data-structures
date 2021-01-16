@@ -79,7 +79,36 @@ int has_vertice(GRAPH *g, int v)
 
 
 
+
+
+
+
 int main()
 {
+    // create a new graph
+    GRAPH *g = new_graph(10);
+
+
+    // add some edges
+    add_edge(g, 0, 1);
+    add_edge(g, 0, 2);
+    add_edge(g, 0, 3);
+    add_edge(g, 1, 4);
+    add_edge(g, 1, 5);
+    add_edge(g, 1, 6);
+    add_edge(g, 1, 7);
+    add_edge(g, 2, 8);
+    add_edge(g, 2, 9);
+    add_edge(g, 2, 1);
+    add_edge(g, 3, 4);
+    add_edge(g, 3, 9);
+    add_edge(g, 9, 5);
+    add_edge(g, 8, 7);
+    add_edge(g, 6, 4);
+
+
+    // check some edges
+    printf("\n\nis there any edge between vertices 0 and 3?:   %d\n", has_edge(g, 0, 3));
+
     return 0;
 }
