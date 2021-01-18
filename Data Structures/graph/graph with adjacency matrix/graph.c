@@ -30,10 +30,16 @@ GRAPH *new_graph(long number_of_V)
     out->number_of_V = number_of_V;
     out->number_of_E = 0;
 
-    out->adj = (int **)malloc(number_of_V*sizeof(number_of_V*sizeof(long)));
+    out->adj = (long **)malloc(number_of_V*sizeof(number_of_V*sizeof(long)));
     for (int i = 0; i < number_of_V; i++)
+    {
+        out->adj[i] = (long *)malloc(number_of_V*sizeof(long));
+
         for (int j = 0; j < number_of_V; j++)
             out->adj[i][j] = -1;
+    }
+
+    return out;
 }
 
 
