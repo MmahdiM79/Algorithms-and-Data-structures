@@ -53,6 +53,7 @@ void add_edge(GRAPH *g, long u, long v)
 {
     check_V(g, u);
     check_V(g, v);
+    g->number_of_E++;
 
     g->adj[u][v] = 1;
 }
