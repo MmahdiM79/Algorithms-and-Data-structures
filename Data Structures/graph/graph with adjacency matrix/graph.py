@@ -12,6 +12,14 @@ class Graph(object):
 
 
 
+    def add_edge(self, u: int, v: int, weight: float) -> None:
+        if u >= self.__number_of_V or u < 0:
+            raise Exception("wrong index for vertice u")
+        if v >= self.__number_of_V or v < 0:
+            raise Exception("wrong index for vertice v")
+
+        self.__adj[u][v] = weight
+        
 
 
 
