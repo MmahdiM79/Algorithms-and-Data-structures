@@ -3,16 +3,23 @@
 
 
 
+from typing import Any
+
+
 class Vertice(object):
 
-    def __init__(self, tag) -> None:
+    def __init__(self, tag: Any) -> None:
         self.__tag = tag
         self.__fields = {}
 
 
-    def add_field(self, **fields):
+    def add_field(self, **fields) -> None:
         for key in fields.keys():
             self.__fields[key] = fields[key]
+
+
+    def tag(self) -> Any:
+        return self.__tag
 
 
 
