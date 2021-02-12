@@ -126,7 +126,7 @@ int main()
 
     // check some edges
     printf("\n\nis there any edge between vertices 0 and 3 ?:   %d\n", has_edge(g, 0, 3));
-    printf("is there any edge between vertices 0 and 3 ?:   %d\n", has_edge(g, 4, 3));
+    printf("is there any edge between vertices 4 and 3 ?:   %d\n", has_edge(g, 4, 3));
 
     // check some vertices
     printf("\n\nis there 5  vertice in graph g ?:   %d\n", has_vertice(g, 5));
