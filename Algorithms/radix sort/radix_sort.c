@@ -8,6 +8,12 @@
 
 
 
+#define index(i, exp) ((x/exp) % 10)
+
+
+
+
+
 // a simple function for printing arrays 
 void printArray(int array[], int size)
 {
