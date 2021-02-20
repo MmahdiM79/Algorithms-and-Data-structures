@@ -7,7 +7,12 @@
 
 
 
-
+#define max_array(arr) {int max = arr[0];\
+                        for (int i = 0; i < sizeof(arr)/sizeof(int); i++)\
+                            if (max < arr[i])\
+                                max = arr[i];\
+                        return max}
+                        
 #define index(i, exp) ((x/exp) % 10)
 
 
