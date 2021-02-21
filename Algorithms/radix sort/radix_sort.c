@@ -12,7 +12,7 @@
                             if (max < arr[i])\
                                 max = arr[i];\
                         return max}
-                        
+
 #define index(i, exp) ((x/exp) % 10)
 
 
@@ -40,6 +40,31 @@ int *counting_sort(int[] array, int n, int exp)
 
     return out;
 }
+
+
+
+
+void radix_sort(int[] array)
+{
+    int size = sizeof(array)/sizeof(int);
+
+    int max = max_array(array);
+
+
+    int exp = 1, *res;
+    while (max/exp > 0)
+    {
+        res = counting_sort(array, size, exp);
+        for (int i = 0; i < size; i++)
+            array[i] = res[i];
+        
+        exp *= 10;
+    }
+}
+
+
+
+
 
 
 
