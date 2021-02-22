@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 
 
@@ -30,7 +31,7 @@ int *counting_sort(int[] array, int n, int exp)
         count[j] += count[i-1];
 
     
-    int out[n];
+    int *out = (int *)malloc(n*sizeof(int));
     for (int k = n-1; k >= 0; k--)
     {
         out[count[index(array[k], exp)]-1] = array[k];
