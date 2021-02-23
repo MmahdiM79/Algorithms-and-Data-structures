@@ -4,24 +4,27 @@
 
 
 
-
-
-
-
-#define max_array(arr) {int max = arr[0];\
-                        for (int i = 0; i < sizeof(arr)/sizeof(int); i++)\
-                            if (max < arr[i])\
-                                max = arr[i];\
-                        return max}
-
 #define index(i, exp) ((x/exp) % 10)
+
+
+
+
+int max(int[] array)
+{
+    int max = array[0];
+    for (int i = 0; i < sizeof(array)/sizeof(int); i++)
+        if (array[i] > max)
+            max = array[i];
+
+    return 0;
+}   
 
 
 
 
 int *counting_sort(int[] array, int n, int exp)
 {
-    int count[10+!] = {0};
+    int count[10+1] = {0};
 
 
     for (int i = 0; i < n; i++)
