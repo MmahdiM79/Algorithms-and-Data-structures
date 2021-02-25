@@ -9,7 +9,7 @@
 
 
 
-int max(int[] array)
+int max(int array[])
 {
     int max = array[0];
     for (int i = 0; i < sizeof(array)/sizeof(int); i++)
