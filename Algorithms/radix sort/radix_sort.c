@@ -22,7 +22,7 @@ int max(int array[])
 
 
 
-int *counting_sort(int[] array, int n, int exp)
+int *counting_sort(int array[], int n, int exp)
 {
     int count[10+1] = {0};
 
