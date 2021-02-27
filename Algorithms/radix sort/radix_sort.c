@@ -4,7 +4,7 @@
 
 
 
-#define index(i, exp) ((x/exp) % 10)
+#define index(i, exp) ((i/exp) % 10)
 
 
 
