@@ -48,7 +48,7 @@ int *counting_sort(int array[], int n, int exp)
 
 
 
-void radix_sort(int[] array)
+void radix_sort(int array[])
 {
     int size = sizeof(array)/sizeof(int);
 
