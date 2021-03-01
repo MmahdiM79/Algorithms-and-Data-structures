@@ -9,7 +9,7 @@
 
 
 
-int max(int array[])
+int max_array(int array[])
 {
     int max = array[0];
     for (int i = 0; i < sizeof(array)/sizeof(int); i++)
@@ -89,5 +89,26 @@ void printArray(int array[], int size)
 
 int main()
 {
+    printf("\n\n ---------------- \n\n");
+    printf("a simple test:\n\n");
+    
+
+    int array[] = {2, 12, 4, 0, -21, 23, -11, 43, 432, 130, 99, 33};
+
+    printf("before sort: ");
+    printArray(array, 12);
+
+
+
+    radix_sort(array);
+
+    printf("after sort: ");
+    printArray(array, 12);
+
+
+    printf("\n ---------------- \n\n\n");
+
+
+
     return 0;
 }
