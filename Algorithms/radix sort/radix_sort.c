@@ -31,7 +31,7 @@ int *counting_sort(int array[], int n, int exp)
         count[index(array[i], exp)] += 1;
 
     for (int j = 1; j < 10+1; j++)
-        count[j] += count[i-1];
+        count[j] += count[j-1];
 
     
     int *out = (int *)malloc(n*sizeof(int));
