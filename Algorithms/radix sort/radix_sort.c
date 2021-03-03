@@ -48,10 +48,8 @@ int *counting_sort(int array[], int n, int exp)
 
 
 
-void radix_sort(int array[])
+void radix_sort(int array[], int size)
 {
-    int size = sizeof(array)/sizeof(int);
-
     int max = max_array(array);
 
 
@@ -100,7 +98,7 @@ int main()
 
 
 
-    radix_sort(array);
+    radix_sort(array, 12);
 
     printf("after sort: ");
     printArray(array, 12);
