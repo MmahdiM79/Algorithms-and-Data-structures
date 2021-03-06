@@ -24,7 +24,7 @@ int max_array(int array[], int size)
 
 int *counting_sort(int array[], int n, int exp)
 {
-    int count[10+1] = {0};
+    int count[10] = {0};
 
 
     for (int i = 0; i < n; i++)
@@ -34,7 +34,7 @@ int *counting_sort(int array[], int n, int exp)
         count[j] += count[j-1];
 
     
-    int *out = (int *)malloc(n*sizeof(int));
+    int out[n];
     for (int k = n-1; k >= 0; k--)
     {
         out[count[index(array[k], exp)]-1] = array[k];
@@ -50,7 +50,7 @@ int *counting_sort(int array[], int n, int exp)
 
 void radix_sort(int array[], int size)
 {
-    int max = max_array(array);
+    int max = max_array(array, size);
 
 
     int exp = 1, *res;
