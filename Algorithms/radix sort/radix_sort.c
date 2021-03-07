@@ -22,15 +22,15 @@ int max_array(int array[], int size)
 
 
 
-int *counting_sort(int array[], int n, int exp)
+void counting_sort(int array[], int n, int exp)
 {
     int count[10] = {0};
 
 
     for (int i = 0; i < n; i++)
-        count[index(array[i], exp)] += 1;
+        count[index(array[i], exp)]++;
 
-    for (int j = 1; j < 10+1; j++)
+    for (int j = 1; j < 10; j++)
         count[j] += count[j-1];
 
     
@@ -38,11 +38,12 @@ int *counting_sort(int array[], int n, int exp)
     for (int k = n-1; k >= 0; k--)
     {
         out[count[index(array[k], exp)]-1] = array[k];
-        count[index(array[k], exp)] -= 1;
+        count[index(array[k], exp)]--;
     }
 
 
-    return out;
+    for (int i = 0; i < n; i++)
+        array[i] = out[i];
 }
 
 
