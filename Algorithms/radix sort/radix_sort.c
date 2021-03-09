@@ -54,13 +54,10 @@ void radix_sort(int array[], int size)
     int max = max_array(array, size);
 
 
-    int exp = 1, *res;
+    int exp = 1;
     while (max/exp > 0)
     {
-        res = counting_sort(array, size, exp);
-        for (int i = 0; i < size; i++)
-            array[i] = res[i];
-        
+        counting_sort(array, size, exp);
         exp *= 10;
     }
 }
