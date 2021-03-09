@@ -89,7 +89,7 @@ int main()
     printf("a simple test:\n\n");
     
 
-    int array[] = {2, 12, 4, 0, -21, 23, -11, 43, 432, 130, 99, 33};
+    int array[] = {2, 12, 4, 0, 21, 23, 11, 43, 432, 130, 99, 33};
 
     printf("before sort: ");
     printArray(array, 12);
@@ -98,7 +98,7 @@ int main()
 
     radix_sort(array, 12);
 
-    printf("after sort: ");
+    printf("after sort:  ");
     printArray(array, 12);
 
 
