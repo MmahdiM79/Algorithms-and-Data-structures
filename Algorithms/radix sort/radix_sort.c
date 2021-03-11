@@ -16,7 +16,7 @@ int max_array(int array[], int size)
         if (array[i] > max)
             max = array[i];
 
-    return 0;
+    return max;
 }   
 
 
