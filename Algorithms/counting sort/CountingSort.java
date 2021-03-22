@@ -1,7 +1,24 @@
 import java.util.Arrays;
 
+
+
+/**
+ * This is a simple implementation of counting sort.
+ * Use {@link CountingSort#countingSort(int[], int)} to sort an array of integers.
+ * 
+ * 
+ * @author Mohammad Mahdi Malmasi
+ * @version 0.1.0
+ */
 public class CountingSort 
 {
+    /**
+     * a simple method to sort an array of integers using counting sort algorithm.
+     * 
+     * 
+     * @param array : an array of integers
+     * @param k : maximum value of the array
+     */ 
     public static void countingSort(int[] array, int k)
     {
         int[] count = new int[k+1];
@@ -25,6 +42,13 @@ public class CountingSort
     }
 
 
+
+
+    /**
+     *  A simple example for {@link CountingSort#countingSort(int[], int)}
+     * 
+     * @param args
+     */ 
     public static void main(String[] args)
     {
         System.out.println("\n\n ---------------- \n");
