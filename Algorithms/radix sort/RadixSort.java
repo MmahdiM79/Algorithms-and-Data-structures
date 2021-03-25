@@ -1,13 +1,34 @@
 import java.util.Arrays;
 
+
+
+/**
+ * This is a simple implementation of radix sort.
+ * Use {@link RadixSort#radixSort(int[])} to sort an array of integers.
+ * 
+ * 
+ * @author Mohammad Mahdi Malmasi
+ * @version 0.1.0
+ */ 
 public class RadixSort 
 {
+
+    /**
+     * @param i : index
+     * @param exp : exponent
+     * 
+     * @return (i/exp) % 10
+     */
     private static int index(int i, int exp)
     {
         return (i/exp) % 10;
     }
 
 
+    /**
+     * @param array : an array of integers
+     * @return maximum value in the array
+     */ 
     private static int maxArray(int[] array)
     {
         int max = array[0];
@@ -19,8 +40,16 @@ public class RadixSort
     }
 
 
-    private static void countingSort(int[] array, int n, int exp)
+    /**
+     * This method sorts an array of integers using counting sort 
+     * Values sorted by their exponents.
+     * 
+     * @param array : an array of integers
+     * @param exp : the exponent of the array
+     */
+    private static void countingSort(int[] array, int exp)
     {
+        int n = array.length;
         int[] count = new int[10];
 
         for (int i = 0; i < n; i++)
@@ -43,8 +72,12 @@ public class RadixSort
     }
 
 
-
-    public static void radixSort(int[] array, int n)
+    /**
+     * This method sorts an array of integers using radix sort algorithm.
+     * 
+     * @param array : an array of integers that you want to sort
+     */
+    public static void radixSort(int[] array)
     {
         int max = maxArray(array);
 
@@ -52,14 +85,18 @@ public class RadixSort
         int exp = 1;
         while (max/exp > 0)
         {
-            countingSort(array, n, exp);
+            countingSort(array, exp);
             exp *= 10;
         }
     }
 
     
 
-
+    /**
+     * A simple example for {@link RadixSort#radixSort(int[])}
+     * 
+     * @param args
+     */
     public static void main(String[] args) 
     {
         System.out.println("\n\n ---------------- \n");
