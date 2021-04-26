@@ -48,3 +48,15 @@ def randomized_quick_sort(array: list, p: int, r: int) -> None:
 
 if __name__ == "__main__":
 
+    print("\n\n ---------------- \n")
+    print("a simple test:\n")
+    
+
+    array = [1.5, -21, 45, 0, -1, -2.5, -11, 77, -50, 133, 88, 16, 29]
+    print(f"before sort: {array}")
+
+    randomized_quick_sort(array, 0, len(array)-1)
+    print(f"after sort: {array}")
+
+
+    print("\n ---------------- \n\n")
