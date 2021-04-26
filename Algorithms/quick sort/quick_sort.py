@@ -19,6 +19,12 @@ def partition(array: list, p: int, r: int) -> int:
 
 
 
+def quick_sort(array: list, p: int, r: int) -> None:
+
+    if p < r:
+        q = partition(array, p, r)
+        quick_sort(array, p, q-1)
+        quick_sort(array, q+1, r)
 
 
 
