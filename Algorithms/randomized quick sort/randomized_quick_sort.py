@@ -32,6 +32,13 @@ def randomized_partition(array: list, p: int, r: int) -> int:
 
 
 
+def randomized_quick_sort(array: list, p: int, r: int) -> None:
+
+    if p < r:
+        q = randomized_partition(array, p, r)
+        randomized_quick_sort(array, p, q-1)
+        randomized_quick_sort(array, q+1, r)
+
 
 
 
