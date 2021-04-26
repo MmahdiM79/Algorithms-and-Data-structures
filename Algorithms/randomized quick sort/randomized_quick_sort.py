@@ -1,3 +1,4 @@
+from random import randint
 
 
 
@@ -17,6 +18,15 @@ def partition(array: list, p: int, r: int) -> int:
 
     return i+1
 
+
+
+
+def randomized_partition(array: list, p: int, r: int) -> int:
+
+    i = randint(p, r)
+    array[i], array[r] = array[r], array[i]
+
+    return partition(array, p, r)
 
 
 
