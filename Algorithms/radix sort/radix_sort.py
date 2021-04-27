@@ -9,20 +9,20 @@ def index(i: int, exp: int) -> int:
 
 
 
-def counting_sort(array: list, n: int, k: int) -> list:
+def counting_sort(array: list, n: int, exp: int) -> list:
 
-    count = [0] * (k+1)
+    count = [0] * (10+1)
 
     for j in range(n):
-        count[array[j]] += 1
+        count[index(array[j], exp)] += 1
 
-    for i in range(1, k+1):
+    for i in range(1, 10+1):
         count[i] += count[i-1]
 
     out = [None] * n
     for j in range(n-1, -1, -1):
-        out[count[array[j]]-1] = array[j]
-        count[array[j]] -= 1
+        out[count[index(array[j], exp)]] = array[j]
+        count[index(array[j], exp)] -= 1
 
 
     return out
