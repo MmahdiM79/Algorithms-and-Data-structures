@@ -6,9 +6,6 @@
 
 
 
-
-
-
 def counting_sort(array: list, n: int, k: int) -> list:
 
     count = [0] * (k+1)
@@ -33,3 +30,16 @@ def counting_sort(array: list, n: int, k: int) -> list:
 
 
 if __name__ == "__main__":
+
+    print("\n\n ---------------- \n")
+    print("a simple test:\n")
+    
+
+    array = [27, 21, 43, 50, 0, 2, 11, 77, 50, 101, 72, 16]
+    print(f"before sort: {array}")
+
+    array = counting_sort(array, len(array), 101)
+    print(f"after sort: {array}")
+
+
+    print("\n ---------------- \n\n")
