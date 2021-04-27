@@ -2,7 +2,7 @@
 
 
 def index(i: int, exp: int) -> int:
-    return (i/exp) % 10
+    return int((i/exp) % 10)
 
 
 
