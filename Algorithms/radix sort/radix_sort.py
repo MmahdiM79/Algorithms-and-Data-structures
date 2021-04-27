@@ -50,3 +50,16 @@ def radix_sort(array: list) -> None:
 
 
 if __name__ == "__main__":
+
+    print("\n\n ---------------- \n")
+    print("a simple test:\n")
+    
+
+    array = [2, 10, 44, 0, 1, 23, 11, 77, 50, 100, 7, 16, 2, 11]
+    print(f"before sort: {array}")
+
+    radix_sort(array)
+    print(f"after sort: {array}")
+
+
+    print("\n ---------------- \n\n")
