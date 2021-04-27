@@ -1,6 +1,12 @@
 
 
 
+def index(i: int, exp: int) -> int:
+    return (i/exp) % 10
+
+
+
+
 
 
 def counting_sort(array: list, n: int, k: int) -> list:
