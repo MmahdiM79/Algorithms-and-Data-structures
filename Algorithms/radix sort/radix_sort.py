@@ -32,6 +32,18 @@ def counting_sort(array: list, n: int, exp: int) -> list:
 
 
 
+def radix_sort(array: list) -> None:
+
+    maximum_num = max(array)
+
+    exp = 1
+    while maximum_num/exp > 0:
+        res = counting_sort(array, len(array), exp)
+        for i in range(len(array)):
+            array[i] = res[i]
+        exp *= 10
+
+
 
 
 
