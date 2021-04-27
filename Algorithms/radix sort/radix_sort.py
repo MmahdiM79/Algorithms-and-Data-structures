@@ -21,7 +21,7 @@ def counting_sort(array: list, n: int, exp: int) -> list:
 
     out = [None] * n
     for j in range(n-1, -1, -1):
-        out[count[index(array[j], exp)]] = array[j]
+        out[count[index(array[j], exp)]-1] = array[j]
         count[index(array[j], exp)] -= 1
 
 
