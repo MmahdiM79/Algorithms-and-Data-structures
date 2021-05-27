@@ -6,8 +6,10 @@ from math import ceil
 
 def find_mid(arr: list) -> int:
 
-    if len(arr) == 1:
-        return arr[0]
+    if len(arr) <= 5:
+        arr.sort()
+        return arr[len(arr)//2] if len(arr)%2 == 1 else arr[(len(arr)//2)-1]
+        
 
 
     hold = []
@@ -28,7 +30,7 @@ def find_mid(arr: list) -> int:
 
 
 def select(arr: list, i: int) -> int:
-
+    pass
     
 
 
@@ -43,4 +45,6 @@ def select(arr: list, i: int) -> int:
 
 
 if __name__ == "__main__":
-    select([2, 3, 4, 1, 5, 6, 7, 8, 9, 0, 2], 4)
+    array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    print(find_mid(array))
+    print(sorted(array))
