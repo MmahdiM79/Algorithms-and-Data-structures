@@ -14,7 +14,7 @@ def select(arr: list, i: int) -> int:
     hold = []
     current = 0
     for _ in range(ceil(len(arr)/5)):
-        hold.append(arr[current:min((current+5, len(arr)))])
+        hold.append(sorted(arr[current:min((current+5, len(arr)))]))
         current += 5
 
     print(hold)
