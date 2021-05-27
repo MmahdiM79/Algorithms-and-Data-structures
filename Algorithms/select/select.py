@@ -34,10 +34,10 @@ def find_mid(arr: list) -> int:
 def partition(arr: list, pivot: int) -> None:
    
     i = 0
-    for j in range(len(list)):
+    for j in range(len(arr)):
         if array[j] <= pivot:
-            i += 1
             array[i], array[j] = array[j], array[i]
+            i += 1
 
 
 
@@ -57,6 +57,8 @@ def select(arr: list, i: int) -> int:
 
 
 if __name__ == "__main__":
-    array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
-    print(find_mid(array))
-    print(sorted(array))
+    array = [4, 5, 6, 8, 9, 1, 2, 3, 4, 5, 9, 0, 6]
+    x = find_mid(array)
+    print(x)
+    partition(array, x)
+    print(array)
