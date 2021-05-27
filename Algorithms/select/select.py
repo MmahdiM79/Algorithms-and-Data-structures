@@ -43,15 +43,25 @@ def partition(arr: list, pivot: int) -> tuple:
             more_than_pivot.append(num)
 
 
-    return (len(less_than_pivot), less_than_pivot, more_than_pivot)
+    return (len(less_than_pivot)+1, less_than_pivot, more_than_pivot)
 
 
 
 
 
 def select(arr: list, i: int) -> int:
-    pass
     
+    x = find_mid(arr)
+
+    k, less_than_x, more_than_x = partition(arr, x)
+
+
+    if k == i:
+        return x
+    elif i < k:
+        select(less_than_x, i)
+    else:
+        select(more_than_x, i-k)
 
 
 
@@ -65,9 +75,6 @@ def select(arr: list, i: int) -> int:
 
 
 if __name__ == "__main__":
-    array = [4, 5, 6, 8, 9, 1, 2, 3, 4, 5, 9, 0, 6]
-    x = find_mid(array)
-    print(x)
+    array = [4, 5, 6, 8, 9, 1]
     print(sorted(array))
-    print(partition(array, x))
-    print(array)
+    print(select(array, 5))
