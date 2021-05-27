@@ -4,12 +4,11 @@ from math import ceil
 
 
 
+def find_mid(arr: list) -> int:
 
+    if len(arr) == 1:
+        return arr[0]
 
-
-
-
-def select(arr: list, i: int) -> int:
 
     hold = []
     current = 0
@@ -17,13 +16,20 @@ def select(arr: list, i: int) -> int:
         hold.append(arr[current:min((current+5, len(arr)))])
         current += 5
     
-    
+
     mids = []
     for sub in hold:
         sub.sort()
         mids.append(sub[len(sub)//2])
 
-    x = mids[len(mids)//2]
+    return find_mid(mids)
+
+
+
+
+def select(arr: list, i: int) -> int:
+
+    
 
 
 
