@@ -31,13 +31,21 @@ def find_mid(arr: list) -> int:
 
 
 
-def partition(arr: list, pivot: int) -> None:
+def partition(arr: list, pivot: int) -> tuple:
    
-    i = 0
-    for j in range(len(arr)):
-        if array[j] <= pivot:
-            array[i], array[j] = array[j], array[i]
-            i += 1
+    less_than_pivot = []
+    more_than_pivot = []
+
+    for num in arr:
+        if num < pivot:
+            less_than_pivot.append(num)
+        else:
+            more_than_pivot.append(num)
+
+
+    return (len(less_than_pivot), less_than_pivot, more_than_pivot)
+
+
 
 
 
@@ -60,5 +68,6 @@ if __name__ == "__main__":
     array = [4, 5, 6, 8, 9, 1, 2, 3, 4, 5, 9, 0, 6]
     x = find_mid(array)
     print(x)
-    partition(array, x)
+    print(sorted(array))
+    print(partition(array, x))
     print(array)
