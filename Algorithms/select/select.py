@@ -22,7 +22,7 @@ def find_mid(arr: list) -> int:
     mids = []
     for sub in hold:
         sub.sort()
-        mids.append(sub[len(sub)//2])
+        mids.append(sub[len(sub)//2]) if len(arr)%2 == 1 else mids.append(sub[(len(sub)//2)-1])
 
     return find_mid(mids)
 
@@ -39,7 +39,7 @@ def partition(arr: list, pivot: int) -> tuple:
     for num in arr:
         if num < pivot:
             less_than_pivot.append(num)
-        else:
+        elif num > pivot:
             more_than_pivot.append(num)
 
 
@@ -59,9 +59,9 @@ def select(arr: list, i: int) -> int:
     if k == i:
         return x
     elif i < k:
-        select(less_than_x, i)
+        return select(less_than_x, i)
     else:
-        select(more_than_x, i-k)
+        return select(more_than_x, i-k)
 
 
 
@@ -75,6 +75,6 @@ def select(arr: list, i: int) -> int:
 
 
 if __name__ == "__main__":
-    array = [4, 5, 6, 8, 9, 1]
+    array = [1, 5, 6, 8, 3, 4, 9, 7, 10, 11, -1, -4, 20, 0, 2]
     print(sorted(array))
     print(select(array, 5))
